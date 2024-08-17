@@ -10,11 +10,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_4cha1"]
 radius = 680.0
 
-[node name="Piloting" type="Node2D" node_paths=PackedStringArray("spaceship", "transparent_Spaceship", "repair")]
+[node name="Piloting" type="Node2D" node_paths=PackedStringArray("spaceship", "transparent_Spaceship", "asteroid", "repair")]
 visibility_layer = 3
 script = ExtResource("1_qjvuk")
 spaceship = NodePath("Spaceship")
 transparent_Spaceship = NodePath("Transparent_Spaceship")
+asteroid = NodePath("asteroid")
 repair = NodePath("Transparent_Spaceship/Repair")
 
 [node name="Placeholder_Background" type="Sprite2D" parent="."]
