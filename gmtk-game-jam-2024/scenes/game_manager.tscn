@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c23wxpxl7cocu"]
+
+[ext_resource type="PackedScene" uid="uid://budt3ysa5gk1b" path="res://scenes/piloting.tscn" id="1_ul1dy"]
+[ext_resource type="PackedScene" uid="uid://l7cwkj8n10kq" path="res://scenes/repair.tscn" id="2_qujf3"]
+
+[node name="Game Manager" type="Node2D"]
+
+[node name="Piloting" parent="." instance=ExtResource("1_ul1dy")]
+
+[node name="Repair" parent="." instance=ExtResource("2_qujf3")]

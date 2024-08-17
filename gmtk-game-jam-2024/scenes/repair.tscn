@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://l7cwkj8n10kq"]
+
+[ext_resource type="PackedScene" uid="uid://b08gxbyuh1pw1" path="res://scenes/spaceship.tscn" id="1_57ky5"]
+
+[node name="Repair" type="Node2D"]
+
+[node name="Spaceship" parent="." instance=ExtResource("1_57ky5")]

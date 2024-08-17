@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://budt3ysa5gk1b"]
+
+[ext_resource type="PackedScene" uid="uid://b08gxbyuh1pw1" path="res://scenes/spaceship.tscn" id="1_cknem"]
+
+[node name="Piloting" type="Node2D"]
+
+[node name="Spaceship" parent="." instance=ExtResource("1_cknem")]

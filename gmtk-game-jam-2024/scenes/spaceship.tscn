@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b08gxbyuh1pw1"]
+
+[ext_resource type="Texture2D" uid="uid://dip1ns1ooi72l" path="res://assets/Kla'ed - Battlecruiser - Base.png" id="1_kf5um"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1eoy1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_kf5um")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Spaceship" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1eoy1")
