@@ -1,19 +1,182 @@
-[gd_scene load_steps=3 format=3 uid="uid://b08gxbyuh1pw1"]
+[gd_scene load_steps=16 format=3 uid="uid://b08gxbyuh1pw1"]
 
-[ext_resource type="Texture2D" uid="uid://dip1ns1ooi72l" path="res://assets/Kla'ed - Battlecruiser - Base.png" id="1_kf5um"]
+[ext_resource type="Texture2D" uid="uid://cqtglw0bvsftj" path="res://assets/Kla'ed - Battlecruiser - Weapons.png" id="1_iguhr"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_1eoy1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxtyd"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efhb6"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvvho"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55lm3"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ux2dn"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejed8"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5g0h"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k71dd"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a21pm"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g2xi"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2orlf"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fch6m"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_towb5"]
+atlas = ExtResource("1_iguhr")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vb76d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_kf5um")
+"texture": SubResource("AtlasTexture_mxtyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efhb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvvho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55lm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux2dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejed8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5g0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxtyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxtyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efhb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvvho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55lm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ux2dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejed8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5g0h")
 }],
 "loop": true,
-"name": &"default",
-"speed": 5.0
+"name": &"Left Side",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxtyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k71dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a21pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g2xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2orlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fch6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_towb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxtyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mxtyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k71dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a21pm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g2xi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2orlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fch6m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_towb5")
+}],
+"loop": true,
+"name": &"Right Side",
+"speed": 10.0
 }]
 
 [node name="Spaceship" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_1eoy1")
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_vb76d")
+animation = &"Left Side"
+frame = 3
+frame_progress = 0.375865
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": false,
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"slice": "",
+"source": "res://assets/Kla'ed - Battlecruiser - Weapons.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0c059a17ce6779ddf58c5ad9bfca742d"
