@@ -1,4 +1,4 @@
-extends Node2D
+class_name Spaceship extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,6 +13,11 @@ func _process(delta: float) -> void:
 	elif Input.is_action_pressed("move_down"):
 		position.y += 1
 	elif Input.is_action_pressed("move_left"):
-		position.x -= 1
+		rotation_degrees
 	elif Input.is_action_pressed("move_right"):
 		position.x += 1
+
+		# Note: put a minus sign to spin in the opposite direction
+	var degrees_per_second = 360.0
+
+	rotate(delta * (1))
