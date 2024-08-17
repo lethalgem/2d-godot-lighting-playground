@@ -1,17 +1,18 @@
+class_name GameManager
 extends Node2D
 
 @onready var players := {
 	"ship":
 	{
-		viewport = $HBoxContainer/SubViewportContainer2/SubViewport,
-		camera = $HBoxContainer/SubViewportContainer2/SubViewport/Camera2D,
-		player = $HBoxContainer/SubViewportContainer2/SubViewport/Piloting/Spaceship,
+		viewport = %LeftSplitscreenViewport,
+		camera = %LeftSplitscreenCamera2D,
+		player = %Piloting.spaceship,
 	},
 	"engineer":
 	{
-		viewport = $HBoxContainer/SubViewportContainer/SubViewport,
-		camera = $HBoxContainer/SubViewportContainer/SubViewport,
-		player = $HBoxContainer/SubViewportContainer2/SubViewport/Piloting/Spaceship/Repair,
+		viewport = %RightSplitscreenViewportContainer,
+		camera = %RightSplitscreenCamera2D,
+		player = %Piloting.repair,
 	}
 }
 

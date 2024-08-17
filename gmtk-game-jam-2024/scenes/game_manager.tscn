@@ -6,37 +6,42 @@
 [node name="Game Manager" type="Node2D"]
 script = ExtResource("1_smdkj")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="SplitscreenHBoxContainer" type="HBoxContainer" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 theme_override_constants/separation = 0
 alignment = 1
 
-[node name="SubViewportContainer2" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="LeftSplitscreenViewportContainer" type="SubViewportContainer" parent="SplitscreenHBoxContainer"]
 layout_mode = 2
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer2"]
+[node name="LeftSplitscreenViewport" type="SubViewport" parent="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer"]
+unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(955, 1080)
 render_target_update_mode = 4
 
-[node name="Piloting" parent="HBoxContainer/SubViewportContainer2/SubViewport" instance=ExtResource("1_ul1dy")]
+[node name="Piloting" parent="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer/LeftSplitscreenViewport" instance=ExtResource("1_ul1dy")]
+unique_name_in_owner = true
 position = Vector2(223, 125)
 
-[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer2/SubViewport"]
+[node name="LeftSplitscreenCamera2D" type="Camera2D" parent="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer/LeftSplitscreenViewport"]
+unique_name_in_owner = true
 
-[node name="Separator" type="ColorRect" parent="HBoxContainer"]
+[node name="Separator" type="ColorRect" parent="SplitscreenHBoxContainer"]
 custom_minimum_size = Vector2(10, 2.08165e-12)
 layout_mode = 2
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="HBoxContainer"]
+[node name="RightSplitscreenViewportContainer" type="SubViewportContainer" parent="SplitscreenHBoxContainer"]
 layout_mode = 2
 
-[node name="SubViewport" type="SubViewport" parent="HBoxContainer/SubViewportContainer"]
+[node name="RightSplitscreenViewportContainer" type="SubViewport" parent="SplitscreenHBoxContainer/RightSplitscreenViewportContainer"]
+unique_name_in_owner = true
 handle_input_locally = false
 size = Vector2i(955, 1080)
 render_target_update_mode = 4
 
-[node name="Camera2D" type="Camera2D" parent="HBoxContainer/SubViewportContainer/SubViewport"]
-
-[editable path="HBoxContainer/SubViewportContainer2/SubViewport/Piloting"]
+[node name="RightSplitscreenCamera2D" type="Camera2D" parent="SplitscreenHBoxContainer/RightSplitscreenViewportContainer/RightSplitscreenViewportContainer"]
+unique_name_in_owner = true
+ignore_rotation = false
+zoom = Vector2(20, 20)
