@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://budt3ysa5gk1b"]
+[gd_scene load_steps=3 format=3 uid="uid://budt3ysa5gk1b"]
 
 [ext_resource type="PackedScene" uid="uid://b08gxbyuh1pw1" path="res://scenes/spaceship.tscn" id="1_cknem"]
+[ext_resource type="PackedScene" uid="uid://l7cwkj8n10kq" path="res://scenes/repair.tscn" id="2_ea6uo"]
 
 [node name="Piloting" type="Node2D"]
 
 [node name="Spaceship" parent="." instance=ExtResource("1_cknem")]
+
+[node name="Repair" parent="Spaceship" instance=ExtResource("2_ea6uo")]

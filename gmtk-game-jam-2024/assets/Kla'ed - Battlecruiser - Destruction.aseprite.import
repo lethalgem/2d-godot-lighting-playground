@@ -3,11 +3,12 @@
 importer="aseprite_wizard.plugin"
 type="SpriteFrames"
 uid="uid://2btwrh6ax1gs"
-valid=false
+path="res://.godot/imported/Kla'ed - Battlecruiser - Destruction.aseprite-e1a67943bf5959790c74132391089818.res"
 
 [deps]
 
 source_file="res://assets/Kla'ed - Battlecruiser - Destruction.aseprite"
+dest_files=["res://.godot/imported/Kla'ed - Battlecruiser - Destruction.aseprite-e1a67943bf5959790c74132391089818.res"]
 
 [params]
 
