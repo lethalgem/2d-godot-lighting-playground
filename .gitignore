@@ -20,3 +20,4 @@ mono_crash.*.json
 ._.DS_Store
 **/.DS_Store
 **/._.DS_Store
+gmtk-game-jam-2024/addons/format_on_save/format_on_save.gd
