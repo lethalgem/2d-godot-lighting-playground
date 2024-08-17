@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b08gxbyuh1pw1"]
+[gd_scene load_steps=6 format=3 uid="uid://b08gxbyuh1pw1"]
 
-[ext_resource type="Script" path="res://scripts/spaceship_piloting.gd" id="1_dyrra"]
+[ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_qpaul"]
 [ext_resource type="Texture2D" uid="uid://djpbekhu8cbfj" path="res://scenes/Kla'ed - Battlecruiser - Base.png" id="2_dwi16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qa112"]
@@ -18,8 +18,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Spaceship" type="Node2D"]
-script = ExtResource("1_dyrra")
+[sub_resource type="CircleShape2D" id="CircleShape2D_10jp5"]
+radius = 51.0098
+
+[node name="Spaceship" type="CharacterBody2D"]
+script = ExtResource("1_qpaul")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -39,3 +42,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "69007ad3dfd25e43fbf626172f54bf22"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_10jp5")
+one_way_collision_margin = 0.0

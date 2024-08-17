@@ -1,4 +1,4 @@
-class_name Spaceship extends Node2D
+class_name Spaceship extends CharacterBody2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -7,19 +7,20 @@ func _ready() -> void:
 
 
 # Speed of the movement
-var speed = 50.0
+var speed = 50
 # Speed of the rotation in degrees per second
 var rotation_speed = 90.0
 
-var MAX_SPEED = 250
-var MIN_SPEED = 0
+var MAX_SPEED = 500
+var MIN_SPEED = -50
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print("velocity: " + str(velocity))
+
 	# Move forward in the direction the node is facing
-	var velocity = Vector2.UP.rotated(rotation)
-	position += velocity * speed * delta
+	velocity = Vector2.UP.rotated(rotation) * speed
 
 	# Modify speed while moving forward automatically
 	if Input.is_action_pressed("move_up") && speed < MAX_SPEED:
@@ -32,3 +33,8 @@ func _process(delta: float) -> void:
 		rotation -= rotation_speed * deg_to_rad(delta)
 	elif Input.is_action_pressed("move_right"):
 		rotation += rotation_speed * deg_to_rad(delta)
+
+
+func _physics_process(delta: float) -> void:
+	print(str(move_and_slide()))
+	pass
