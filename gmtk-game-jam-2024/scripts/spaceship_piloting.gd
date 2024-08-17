@@ -11,6 +11,9 @@ var speed = 50.0
 # Speed of the rotation in degrees per second
 var rotation_speed = 90.0
 
+var MAX_SPEED = 250
+var MIN_SPEED = 0
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,9 +22,9 @@ func _process(delta: float) -> void:
 	position += velocity * speed * delta
 
 	# Modify speed while moving forward automatically
-	if Input.is_action_pressed("move_up") && speed < 200:
+	if Input.is_action_pressed("move_up") && speed < MAX_SPEED:
 		speed += 1
-	elif Input.is_action_pressed("move_down") && speed > 0:
+	elif Input.is_action_pressed("move_down") && speed > MIN_SPEED:
 		speed -= 1
 
 	# change roatation
