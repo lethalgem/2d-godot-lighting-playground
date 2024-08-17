@@ -6,14 +6,23 @@
 [ext_resource type="Texture2D" uid="uid://b25txitt6v5m1" path="res://assets/backgrounds/Placeholder_Background.png" id="2_qctxp"]
 
 [node name="Piloting" type="Node2D" node_paths=PackedStringArray("spaceship", "repair")]
+visibility_layer = 3
 script = ExtResource("1_qjvuk")
 spaceship = NodePath("Spaceship")
-repair = NodePath("Spaceship/Repair")
+repair = NodePath("Transparent_Spaceship/Repair")
 
 [node name="Placeholder_Background" type="Sprite2D" parent="."]
+visibility_layer = 3
 texture = ExtResource("2_qctxp")
 
 [node name="Spaceship" parent="." instance=ExtResource("1_cknem")]
 unique_name_in_owner = true
+visibility_layer = 4
 
-[node name="Repair" parent="Spaceship" instance=ExtResource("2_ea6uo")]
+[node name="Transparent_Spaceship" parent="." instance=ExtResource("1_cknem")]
+modulate = Color(1, 1, 1, 0.156863)
+visibility_layer = 2
+
+[node name="Repair" parent="Transparent_Spaceship" instance=ExtResource("2_ea6uo")]
+position = Vector2(5, 5)
+scale = Vector2(0.25, 0.25)
