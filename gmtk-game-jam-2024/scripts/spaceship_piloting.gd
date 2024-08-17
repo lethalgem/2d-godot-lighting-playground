@@ -13,11 +13,6 @@ func _process(delta: float) -> void:
 	elif Input.is_action_pressed("move_down"):
 		position.y += 1
 	elif Input.is_action_pressed("move_left"):
-		rotation_degrees
+		rotate(-1 * delta)
 	elif Input.is_action_pressed("move_right"):
-		position.x += 1
-
-		# Note: put a minus sign to spin in the opposite direction
-	var degrees_per_second = 360.0
-
-	rotate(delta * (1))
+		rotate(1 * delta)
