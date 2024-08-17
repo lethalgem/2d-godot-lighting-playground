@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://budt3ysa5gk1b"]
+[gd_scene load_steps=3 format=3 uid="uid://budt3ysa5gk1b"]
 
+[ext_resource type="Script" path="res://scripts/piloting.gd" id="1_65pya"]
 [ext_resource type="PackedScene" uid="uid://b08gxbyuh1pw1" path="res://scenes/spaceship.tscn" id="1_cknem"]
 
 [node name="Piloting" type="Node2D"]
+script = ExtResource("1_65pya")
 
 [node name="Spaceship" parent="." instance=ExtResource("1_cknem")]
