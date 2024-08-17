@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://budt3ysa5gk1b"]
+[gd_scene load_steps=5 format=3 uid="uid://budt3ysa5gk1b"]
 
 [ext_resource type="PackedScene" uid="uid://b08gxbyuh1pw1" path="res://scenes/spaceship.tscn" id="1_cknem"]
 [ext_resource type="Script" path="res://scenes/piloting.gd" id="1_qjvuk"]
 [ext_resource type="PackedScene" uid="uid://l7cwkj8n10kq" path="res://scenes/repair.tscn" id="2_ea6uo"]
+[ext_resource type="Texture2D" uid="uid://b25txitt6v5m1" path="res://assets/backgrounds/Placeholder_Background.png" id="2_qctxp"]
 
 [node name="Piloting" type="Node2D" node_paths=PackedStringArray("spaceship", "repair")]
 script = ExtResource("1_qjvuk")
 spaceship = NodePath("Spaceship")
 repair = NodePath("Spaceship/Repair")
+
+[node name="Placeholder_Background" type="Sprite2D" parent="."]
+texture = ExtResource("2_qctxp")
 
 [node name="Spaceship" parent="." instance=ExtResource("1_cknem")]
 unique_name_in_owner = true

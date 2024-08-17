@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqtglw0bvsftj"
-path="res://.godot/imported/Kla'ed - Battlecruiser - Weapons.png-8ae4bdcdd6e996bdad51e68658110b21.ctex"
+uid="uid://cyeji8fei77r5"
+path="res://.godot/imported/Kla'ed - Battlecruiser - Shield.png-6a64b502f73f08d98bda84d509bbe2dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Kla'ed - Battlecruiser - Weapons.png"
-dest_files=["res://.godot/imported/Kla'ed - Battlecruiser - Weapons.png-8ae4bdcdd6e996bdad51e68658110b21.ctex"]
+source_file="res://assets/battlecruiser/Kla'ed - Battlecruiser - Shield.png"
+dest_files=["res://.godot/imported/Kla'ed - Battlecruiser - Shield.png-6a64b502f73f08d98bda84d509bbe2dc.ctex"]
 
 [params]
 

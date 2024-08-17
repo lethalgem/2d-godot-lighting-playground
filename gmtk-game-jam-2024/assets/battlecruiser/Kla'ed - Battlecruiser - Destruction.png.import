@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci5thk4s3c2sf"
-path="res://.godot/imported/Kla'ed - Battlecruiser - Engine.png-906a206f56d6894817caf1cb39b1ab2e.ctex"
+uid="uid://c7nk4gtb6tbw3"
+path="res://.godot/imported/Kla'ed - Battlecruiser - Destruction.png-f75b0e428792b1692062cd9b901d643b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Kla'ed - Battlecruiser - Engine.png"
-dest_files=["res://.godot/imported/Kla'ed - Battlecruiser - Engine.png-906a206f56d6894817caf1cb39b1ab2e.ctex"]
+source_file="res://assets/battlecruiser/Kla'ed - Battlecruiser - Destruction.png"
+dest_files=["res://.godot/imported/Kla'ed - Battlecruiser - Destruction.png-f75b0e428792b1692062cd9b901d643b.ctex"]
 
 [params]
 

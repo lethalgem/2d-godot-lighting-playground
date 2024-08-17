@@ -1,160 +1,20 @@
-[gd_scene load_steps=17 format=3 uid="uid://b08gxbyuh1pw1"]
+[gd_scene load_steps=5 format=3 uid="uid://b08gxbyuh1pw1"]
 
 [ext_resource type="Script" path="res://scripts/spaceship_piloting.gd" id="1_dyrra"]
-[ext_resource type="Texture2D" uid="uid://cqtglw0bvsftj" path="res://assets/Kla'ed - Battlecruiser - Weapons.png" id="1_iguhr"]
+[ext_resource type="Texture2D" uid="uid://djpbekhu8cbfj" path="res://scenes/Kla'ed - Battlecruiser - Base.png" id="2_dwi16"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mxtyd"]
-atlas = ExtResource("1_iguhr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_qa112"]
+atlas = ExtResource("2_dwi16")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_efhb6"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(384, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hvvho"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(0, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_55lm3"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(128, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ux2dn"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(256, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejed8"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(384, 256, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5g0h"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(0, 384, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k71dd"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a21pm"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2g2xi"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2orlf"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(0, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fch6m"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(128, 128, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_towb5"]
-atlas = ExtResource("1_iguhr")
-region = Rect2(256, 128, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_vb76d"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_tv8yj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mxtyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_efhb6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hvvho")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_55lm3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ux2dn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejed8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a5g0h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxtyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxtyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_efhb6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hvvho")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_55lm3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ux2dn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejed8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a5g0h")
+"texture": SubResource("AtlasTexture_qa112")
 }],
 "loop": true,
-"name": &"Left Side",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxtyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k71dd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a21pm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2g2xi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2orlf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fch6m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_towb5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxtyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mxtyd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k71dd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a21pm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2g2xi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2orlf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fch6m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_towb5")
-}],
-"loop": true,
-"name": &"Right Side",
+"name": &"default",
 "speed": 10.0
 }]
 
@@ -163,10 +23,7 @@ script = ExtResource("1_dyrra")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_vb76d")
-animation = &"Left Side"
-frame = 3
-frame_progress = 0.375865
+sprite_frames = SubResource("SpriteFrames_tv8yj")
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": true,
 "output_section": false,
@@ -179,6 +36,6 @@ metadata/_aseprite_wizard_config_ = {
 "o_name": "",
 "only_visible": true,
 "slice": "",
-"source": "res://assets/Kla'ed - Battlecruiser - Weapons.aseprite"
+"source": "res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.aseprite"
 }
-metadata/_aseprite_wizard_source_file_hash_ = "0c059a17ce6779ddf58c5ad9bfca742d"
+metadata/_aseprite_wizard_source_file_hash_ = "69007ad3dfd25e43fbf626172f54bf22"
