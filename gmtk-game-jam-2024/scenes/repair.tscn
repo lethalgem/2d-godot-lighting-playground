@@ -202,6 +202,7 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_4tgig")
 sprite = NodePath("AnimatedSprite2D")
+speed = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engineer"]
 shape = SubResource("RectangleShape2D_k3ijg")

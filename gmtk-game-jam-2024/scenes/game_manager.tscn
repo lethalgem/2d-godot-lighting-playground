@@ -44,4 +44,4 @@ render_target_update_mode = 4
 [node name="RightSplitscreenCamera2D" type="Camera2D" parent="SplitscreenHBoxContainer/RightSplitscreenViewportContainer/RightSplitscreenViewportContainer"]
 unique_name_in_owner = true
 ignore_rotation = false
-zoom = Vector2(20, 20)
+zoom = Vector2(50, 50)
