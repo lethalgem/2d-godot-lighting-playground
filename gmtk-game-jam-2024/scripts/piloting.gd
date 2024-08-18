@@ -15,6 +15,8 @@ func _process(delta: float) -> void:
 
 
 func manageAsteroids():
+	if asteroid == null:
+		return
 	var astroidDistanceFromPlayer = spaceship.position.distance_to(asteroid.position)
 	if astroidDistanceFromPlayer > MAX_RENDER_DISTANCE:
-		remove_child(asteroid)
+		asteroid.queue_free()

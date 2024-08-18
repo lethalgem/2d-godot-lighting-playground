@@ -27,13 +27,14 @@ texture = ExtResource("2_qctxp")
 visibility_layer = 4
 
 [node name="Transparent_Spaceship" parent="." instance=ExtResource("1_cknem")]
-self_modulate = Color(1, 1, 1, 0)
+modulate = Color(1, 1, 1, 0.156863)
 visibility_layer = 2
 collision_layer = 0
 collision_mask = 0
 
 [node name="Repair" parent="Transparent_Spaceship" instance=ExtResource("2_ea6uo")]
-scale = Vector2(0.041, 0.041)
+position = Vector2(5, 5)
+scale = Vector2(0.25, 0.25)
 
 [node name="asteroid" type="CharacterBody2D" parent="."]
 position = Vector2(-174, 159)
