@@ -2,7 +2,7 @@ class_name Engineer
 extends CharacterBody2D
 
 @export var sprite: AnimatedSprite2D
-@export var speed: int = 150
+@export var speed: int = 250
 
 @onready var directions_traveled = Array()  # can assume never empty because we push a value on ready
 @onready var current_state = state.Walk

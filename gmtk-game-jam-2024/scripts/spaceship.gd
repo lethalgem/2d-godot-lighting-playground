@@ -7,7 +7,7 @@ func _ready() -> void:
 
 
 # Speed of the movement
-var speed = 50
+var speed = 0
 # Speed of the rotation in degrees per second
 var rotation_speed = 90.0
 
