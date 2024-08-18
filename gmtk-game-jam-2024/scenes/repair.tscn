@@ -186,14 +186,15 @@ engineer = NodePath("Engineer")
 
 [node name="TestShip" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0.203922)
+modulate = Color(1, 1, 1, 0.552941)
 scale = Vector2(25, 25)
 texture = ExtResource("1_5xdxt")
 
 [node name="Ship Indoors" parent="." instance=ExtResource("2_huixh")]
+position = Vector2(0, -1)
 
 [node name="Engineer" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite")]
-position = Vector2(203, 178)
+position = Vector2(167, 111)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_4tgig")

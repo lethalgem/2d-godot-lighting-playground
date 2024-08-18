@@ -23,8 +23,6 @@ extends Node2D
 	}
 }
 
-@onready var test_position: ColorRect = %Test_Position
-
 
 func _ready():
 	# assign the ship's level view to the split screen
@@ -36,17 +34,6 @@ func _ready():
 			var remote_transform := RemoteTransform2D.new()
 			remote_transform.remote_path = node.camera.get_path()
 			node.player.add_child(remote_transform)
-
-	#if node == players["zoomed_ship"]:
-	## offset zoomed_ship camera to match starting point for engineer
-	#players["zoomed_ship"].remote_transform = remote_transform
-	#var engineer_position = players["engineer"].player.position
-	## 24.5 works at camera zoom level of 49
-	#players["zoomed_ship"].remote_transform.position += engineer_position / 24.5
-
-	# offset zoomed_ship camera to match the location of the engineer
-	print(players["zoomed_ship"].camera.global_position)
-	print(players["engineer"].camera.global_position)
 
 
 func _process(delta: float) -> void:
@@ -110,21 +97,23 @@ func _process(delta: float) -> void:
 	#print(engineer_relative_position)
 
 	var relative_angle = Vector2(0, 0).angle_to_point(engineer_relative_position)
-	var relative_distance = Vector2(0, 0).distance_to(engineer_relative_position)
-	#print(relative_angle)
-	print(relative_distance)
+	var relative_distance = Vector2(0, 0).distance_to(engineer_relative_position) * 0.04
+	print(rad_to_deg(relative_angle))
+	#print(relative_distance)
 
 	var spaceship: Spaceship = players["zoomed_ship"].player
 	#print(spaceship.rotation_degrees)
-	var combined_angle = relative_angle - deg_to_rad(spaceship.rotation_degrees)
-	#print(combined_angle)
+	var combined_angle = deg_to_rad(90) - relative_angle - deg_to_rad(spaceship.rotation_degrees)
+
+	print(rad_to_deg(combined_angle))
 	var new_point_location = rotated_point(
 		spaceship.global_position, combined_angle, relative_distance
 	)
 	#print(new_point_location)
 
-	test_position.global_position = new_point_location
-	test_position.rotation = spaceship.rotation
+	var zoomed_camera = players["zoomed_ship"]
+	zoomed_camera.camera.global_position = new_point_location
+	zoomed_camera.camera.rotation = spaceship.rotation
 
 	pass
 

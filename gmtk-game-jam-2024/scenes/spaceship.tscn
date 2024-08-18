@@ -1,21 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://b08gxbyuh1pw1"]
+[gd_scene load_steps=5 format=3 uid="uid://b08gxbyuh1pw1"]
 
 [ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_qpaul"]
-[ext_resource type="Texture2D" uid="uid://djpbekhu8cbfj" path="res://scenes/Kla'ed - Battlecruiser - Base.png" id="2_dwi16"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qa112"]
-atlas = ExtResource("2_dwi16")
-region = Rect2(0, 0, 128, 128)
+[ext_resource type="Texture2D" uid="uid://jodr3m6ucygy" path="res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.png" id="2_3tih2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tv8yj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qa112")
+"texture": ExtResource("2_3tih2")
 }],
 "loop": true,
 "name": &"default",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_10jp5"]
