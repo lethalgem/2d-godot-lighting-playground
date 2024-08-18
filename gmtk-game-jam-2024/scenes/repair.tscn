@@ -1,6 +1,7 @@
-[gd_scene load_steps=38 format=3 uid="uid://l7cwkj8n10kq"]
+[gd_scene load_steps=39 format=3 uid="uid://l7cwkj8n10kq"]
 
 [ext_resource type="Texture2D" uid="uid://jodr3m6ucygy" path="res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.png" id="1_5xdxt"]
+[ext_resource type="Script" path="res://scripts/repair.gd" id="1_jpkfy"]
 [ext_resource type="PackedScene" uid="uid://bxa2ixv0aodua" path="res://scenes/ship_indoors.tscn" id="2_huixh"]
 [ext_resource type="Script" path="res://scripts/engineer.gd" id="3_4tgig"]
 [ext_resource type="Texture2D" uid="uid://b6s3ckcvtaeb3" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_E01.png" id="3_an6ii"]
@@ -37,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://blrae3qb73s2" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_N06.png" id="26_dos1m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3ijg"]
-size = Vector2(24, 28)
+size = Vector2(20, 25)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xbnnn"]
 animations = [{
@@ -178,21 +179,16 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Repair" type="Node2D"]
+[node name="Repair" type="Node2D" node_paths=PackedStringArray("engineer")]
 visibility_layer = 2
+script = ExtResource("1_jpkfy")
+engineer = NodePath("Engineer")
 
 [node name="TestShip" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.203922)
 scale = Vector2(25, 25)
 texture = ExtResource("1_5xdxt")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -19.0
-offset_right = 20.0
-offset_bottom = 21.0
-color = Color(1, 0, 1, 1)
 
 [node name="Ship Indoors" parent="." instance=ExtResource("2_huixh")]
 
@@ -202,9 +198,9 @@ collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_4tgig")
 sprite = NodePath("AnimatedSprite2D")
-speed = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engineer"]
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_k3ijg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Engineer"]
