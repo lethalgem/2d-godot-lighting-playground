@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b08gxbyuh1pw1"]
+[gd_scene load_steps=11 format=3 uid="uid://b08gxbyuh1pw1"]
 
 [ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_qpaul"]
 [ext_resource type="Texture2D" uid="uid://jodr3m6ucygy" path="res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.png" id="2_3tih2"]
+[ext_resource type="Texture2D" uid="uid://cfssmqawvkc17" path="res://scenes/Kla'ed - Battlecruiser - Engine.png" id="3_dh6xj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tv8yj"]
 animations = [{
@@ -14,13 +15,74 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdhb5"]
+atlas = ExtResource("3_dh6xj")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxgps"]
+atlas = ExtResource("3_dh6xj")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru2ro"]
+atlas = ExtResource("3_dh6xj")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my5tt"]
+atlas = ExtResource("3_dh6xj")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5iocr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxgps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru2ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my5tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxgps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru2ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my5tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdhb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxgps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru2ro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my5tt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_10jp5"]
 radius = 51.0098
 
-[node name="Spaceship" type="CharacterBody2D"]
+[node name="Spaceship" type="CharacterBody2D" node_paths=PackedStringArray("engine_glow_sprite")]
 script = ExtResource("1_qpaul")
+engine_glow_sprite = NodePath("EngineGlow")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="ShipBody" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tv8yj")
 metadata/_aseprite_wizard_interface_config_ = {
@@ -38,6 +100,26 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.aseprite"
 }
 metadata/_aseprite_wizard_source_file_hash_ = "69007ad3dfd25e43fbf626172f54bf22"
+
+[node name="EngineGlow" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5iocr")
+frame_progress = 0.689046
+metadata/_aseprite_wizard_config_ = {
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"slice": "",
+"source": "res://assets/battlecruiser/Kla'ed - Battlecruiser - Engine.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"slice_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7f739bf60a1835f198525531fef32103"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_10jp5")
