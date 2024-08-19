@@ -2,15 +2,14 @@ class_name Piloting
 extends Node2D
 
 @export var spaceship: CharacterBody2D
-@export var transparent_Spaceship: CharacterBody2D
 @export var asteroid: CharacterBody2D
-@export var repair: Node2D
+@export var left_splitscreen_background: ParallaxBackground
+@export var right_splitscreen_background: ParallaxBackground
 
 var MAX_RENDER_DISTANCE = 1000
 
 
 func _process(delta: float) -> void:
-	transparent_Spaceship.global_position = spaceship.global_position
 	manageAsteroids()
 
 

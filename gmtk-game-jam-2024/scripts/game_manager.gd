@@ -7,13 +7,14 @@ extends Node2D
 		viewport = %LeftSplitscreenViewport,
 		camera = %LeftSplitscreenCamera2D,
 		player = %Piloting.spaceship,
+		parallax_background = %Piloting.left_splitscreen_background
 	},
 	"zoomed_ship":
 	{
 		viewport = %RightSplitscreenViewport,
 		camera = %RightSplitscreenCamera2D,
 		player = %Piloting.spaceship,
-		remote_transform = null
+		parallax_background = %Piloting.right_splitscreen_background
 	},
 	"engineer":
 	{
@@ -27,6 +28,8 @@ extends Node2D
 func _ready():
 	# assign the ship's level view to the split screen
 	players["zoomed_ship"].viewport.world_2d = players["ship"].viewport.world_2d
+	players["ship"].parallax_background.custom_viewport = (players["ship"].viewport)
+	players["zoomed_ship"].parallax_background.custom_viewport = (players["zoomed_ship"].viewport)
 
 	# assign splitscreen camera to follow the zoomed_ship and engineer
 	for node in players.values():
@@ -37,61 +40,7 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	# pin camera to origin of ship and rotate with it
-	players["zoomed_ship"].camera.global_position = (players["zoomed_ship"].player.global_position)
-	players["zoomed_ship"].camera.rotation = players["zoomed_ship"].player.rotation
-
-	var engineer_position = players["engineer"].player.position
-	#print(players["engineer"].player.rotation)
-	#players["engineer"].camera.rotation = players["zoomed_ship"].player.rotation
-
-	#print(players["zoomed_ship"].player.angle_to(players["engineer"].player))
-	#print(players["zoomed_ship"].camera.global_position)
-	#print(players["zoomed_ship"].player.global_position + engineer_position / 24.5)  # original position of player
-	#print(players["engineer"].player.global_position)
-
-# ---
-
-	#var engineer_position_relative_to_ship = (
-	#players["zoomed_ship"].player.global_position + (engineer_position / 24.5)
-	#)
-#
-	#test_position.global_position = engineer_position_relative_to_ship
-#
-	#print(engineer_position_relative_to_ship - players["zoomed_ship"].player.global_position)
-#
-	#var angle_from_ship_to_engineer = players["zoomed_ship"].player.global_position.angle_to_point(
-	#engineer_position_relative_to_ship
-	#)
-#
-	#print(angle_from_ship_to_engineer)
-#
-	#var distance_from_ship_to_engineer = players["zoomed_ship"].player.global_position.distance_to(
-	#engineer_position_relative_to_ship
-	#)
-#
-	#print(distance_from_ship_to_engineer)
-#
-	#var rotated_point = rotated_point(
-	#players["zoomed_ship"].player.global_position,
-	#angle_from_ship_to_engineer,
-	#distance_from_ship_to_engineer
-	#)
-	#print(rotated_point)
-#
-	#test_position.global_position = rotated_point
-
-# ---
-
-	#players["zoomed_ship"].camera.origin = players["zoomed_ship"].player.origin
-
-	#players["zoomed_ship"].camera.position += engineer_position / 24.5
-
-	# try
-	# get angle and distance for engineer relative to 0,0 in repair, aka angle and distance just for the repair scene
-	# distance will have to be multiplied by a scalar of some sort but who cares?
-	# use that to place the square -- but how? with rotated_point?
-
+	# pin camera to engineer as they walk around
 	var engineer = players["engineer"].player
 	var engineer_relative_position = engineer.position
 	#print(engineer_relative_position)
@@ -111,11 +60,9 @@ func _process(delta: float) -> void:
 	)
 	#print(new_point_location)
 
-	var zoomed_camera = players["zoomed_ship"]
-	zoomed_camera.camera.global_position = new_point_location
-	zoomed_camera.camera.rotation = spaceship.rotation
-
-	pass
+	var zoomed_camera = players["zoomed_ship"].camera
+	zoomed_camera.global_position = new_point_location
+	zoomed_camera.rotation = spaceship.rotation
 
 
 func rotated_point(_center, _angle, _distance):

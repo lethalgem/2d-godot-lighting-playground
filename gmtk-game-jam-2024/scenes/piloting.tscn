@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://b08gxbyuh1pw1" path="res://scenes/spaceship.tscn" id="1_cknem"]
 [ext_resource type="Script" path="res://scripts/piloting.gd" id="1_qjvuk"]
-[ext_resource type="PackedScene" uid="uid://l7cwkj8n10kq" path="res://scenes/repair.tscn" id="2_ea6uo"]
 [ext_resource type="Texture2D" uid="uid://bhpig1eg0h5p4" path="res://assets/backgrounds/space_bg.png" id="2_ewf0h"]
 [ext_resource type="Texture2D" uid="uid://deo1u3h6crxiw" path="res://assets/backgrounds/stars_bg1.png" id="3_yp7ao"]
+[ext_resource type="Script" path="res://scripts/right_split_screen_background.gd" id="4_xm0m1"]
 [ext_resource type="Script" path="res://scripts/asteroid.gd" id="5_hnn3s"]
 [ext_resource type="Texture2D" uid="uid://c0wbb8xocrkw6" path="res://assets/asteroids/asteroid.png" id="6_kc6ky"]
 
@@ -14,42 +14,80 @@ load_path = "res://.godot/imported/planets_bg3.png-09797c3e1fb551567fe3fd4a6f37d
 [sub_resource type="CircleShape2D" id="CircleShape2D_4cha1"]
 radius = 680.0
 
-[node name="Piloting" type="Node2D" node_paths=PackedStringArray("spaceship", "transparent_Spaceship", "asteroid", "repair")]
+[node name="Piloting" type="Node2D" node_paths=PackedStringArray("spaceship", "asteroid", "left_splitscreen_background", "right_splitscreen_background")]
 visibility_layer = 3
 script = ExtResource("1_qjvuk")
 spaceship = NodePath("Spaceship")
-transparent_Spaceship = NodePath("Transparent_Spaceship")
 asteroid = NodePath("asteroid")
-repair = NodePath("Transparent_Spaceship/Repair")
+left_splitscreen_background = NodePath("LeftSplitScreenBackground")
+right_splitscreen_background = NodePath("RightSplitScreenBackground")
 
-[node name="Background" type="ParallaxBackground" parent="."]
+[node name="LeftSplitScreenBackground" type="ParallaxBackground" parent="."]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+[node name="ParallaxLayer" type="ParallaxLayer" parent="LeftSplitScreenBackground"]
 motion_mirroring = Vector2(1920, 1920)
 
-[node name="base_bg" type="Sprite2D" parent="Background/ParallaxLayer"]
+[node name="base_bg" type="Sprite2D" parent="LeftSplitScreenBackground/ParallaxLayer"]
 z_index = -3
 texture_filter = 1
 scale = Vector2(1, 1.027)
 texture = ExtResource("2_ewf0h")
 centered = false
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Background"]
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="LeftSplitScreenBackground"]
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(1920, 1080)
 
-[node name="stars_bg" type="Sprite2D" parent="Background/ParallaxLayer2"]
+[node name="stars_bg" type="Sprite2D" parent="LeftSplitScreenBackground/ParallaxLayer2"]
 z_index = -1
 texture_filter = 1
 scale = Vector2(1, 1.027)
 texture = ExtResource("3_yp7ao")
 centered = false
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Background"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="LeftSplitScreenBackground"]
 motion_scale = Vector2(0.75, 0.75)
 motion_mirroring = Vector2(1920, 1080)
 
-[node name="planets_bg" type="Sprite2D" parent="Background/ParallaxLayer3"]
+[node name="planets_bg" type="Sprite2D" parent="LeftSplitScreenBackground/ParallaxLayer3"]
+z_index = -2
+texture_filter = 1
+scale = Vector2(1, 1.027)
+texture = SubResource("CompressedTexture2D_b3axd")
+centered = false
+
+[node name="RightSplitScreenBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(3.5, 3.5)
+transform = Transform2D(3.5, 0, 0, 3.5, 0, 0)
+scroll_ignore_camera_zoom = true
+script = ExtResource("4_xm0m1")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="RightSplitScreenBackground"]
+motion_mirroring = Vector2(1920, 1920)
+
+[node name="base_bg" type="Sprite2D" parent="RightSplitScreenBackground/ParallaxLayer"]
+z_index = -3
+texture_filter = 1
+scale = Vector2(1, 1.027)
+texture = ExtResource("2_ewf0h")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="RightSplitScreenBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="stars_bg" type="Sprite2D" parent="RightSplitScreenBackground/ParallaxLayer2"]
+z_index = -1
+texture_filter = 1
+scale = Vector2(1, 1.027)
+texture = ExtResource("3_yp7ao")
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="RightSplitScreenBackground"]
+motion_scale = Vector2(0.75, 0.75)
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="planets_bg" type="Sprite2D" parent="RightSplitScreenBackground/ParallaxLayer3"]
 z_index = -2
 texture_filter = 1
 scale = Vector2(1, 1.027)
@@ -58,16 +96,6 @@ centered = false
 
 [node name="Spaceship" parent="." instance=ExtResource("1_cknem")]
 visibility_layer = 4
-
-[node name="Transparent_Spaceship" parent="." instance=ExtResource("1_cknem")]
-visible = false
-self_modulate = Color(1, 1, 1, 0)
-visibility_layer = 2
-collision_layer = 0
-collision_mask = 0
-
-[node name="Repair" parent="Transparent_Spaceship" instance=ExtResource("2_ea6uo")]
-scale = Vector2(0.041, 0.041)
 
 [node name="asteroid" type="CharacterBody2D" parent="."]
 position = Vector2(-174, 159)
