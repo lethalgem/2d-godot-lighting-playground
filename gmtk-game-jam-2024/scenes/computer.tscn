@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bxawe3kirmsm"]
+[gd_scene load_steps=25 format=3 uid="uid://bxawe3kirmsm"]
 
 [ext_resource type="Script" path="res://scripts/computer.gd" id="1_hnvje"]
 [ext_resource type="Script" path="res://scripts/computer_use_area.gd" id="2_is56o"]
@@ -101,6 +101,20 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvjf6"]
+bg_color = Color(0.903627, 0.726554, 0.196689, 0.756863)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jskvp"]
+bg_color = Color(0.988235, 0.278431, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [node name="Computer" type="Node2D"]
 script = ExtResource("1_hnvje")
 
@@ -119,3 +133,13 @@ sprite_frames = SubResource("SpriteFrames_eqdn6")
 animation = &"dark_front"
 frame = 1
 frame_progress = 0.776186
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -20.0
+offset_top = -18.0
+offset_right = 20.0
+offset_bottom = -13.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dvjf6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_jskvp")
+show_percentage = false

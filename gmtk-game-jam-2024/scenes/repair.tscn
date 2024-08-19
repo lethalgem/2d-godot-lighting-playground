@@ -218,3 +218,4 @@ frame_progress = 0.28609
 shape = SubResource("CircleShape2D_lykem")
 
 [connection signal="area_entered" from="Engineer/ComputerDetectionArea" to="." method="_on_computer_detection_area_area_entered"]
+[connection signal="area_exited" from="Engineer/ComputerDetectionArea" to="." method="_on_computer_detection_area_area_exited"]

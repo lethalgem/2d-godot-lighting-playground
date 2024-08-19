@@ -5,6 +5,8 @@ extends Node2D
 @export var sprite: sprite_name
 @onready var animated_sprite: AnimatedSprite2D = %ComputerSprite
 @onready var computer_use_area: Area2D = %ComputerUseArea
+@onready var progress_bar = %ProgressBar
+
 var computer_id: int:
 	set(value):
 		computer_use_area.computer_id = value
@@ -38,3 +40,7 @@ func animate():
 			animated_sprite.play("white_side")
 		sprite_name.white_front:
 			animated_sprite.play("white_front")
+
+
+func should_show_progress_bar(should_show: bool):
+	progress_bar.visibile = should_show
