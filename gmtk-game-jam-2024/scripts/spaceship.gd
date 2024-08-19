@@ -1,6 +1,11 @@
 class_name Spaceship extends CharacterBody2D
 
+@export var ship_body_sprite: AnimatedSprite2D
 @export var engine_glow_sprite: AnimatedSprite2D
+
+# dictionary with animation names
+var animations := {default = "default", shield = "shield", death = "death"}
+var current_animation = animations.shield
 
 # Speed of the movement
 var speed = 0
@@ -39,7 +44,27 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	animate_engine_glow()
+	animate_ship_body()
 	pass
+
+
+func animate_ship_body():
+	match current_animation:
+		animations.default:
+			ship_body_sprite.visible = true
+			engine_glow_sprite.visible = true
+			ship_body_sprite.play(animations.default)
+		animations.shield:
+			ship_body_sprite.visible = true
+			engine_glow_sprite.visible = true
+			ship_body_sprite.play(animations.shield)
+		animations.death:
+			ship_body_sprite.visible = true
+			engine_glow_sprite.visible = false
+			ship_body_sprite.play(animations.death)
+			# should free the child here most likely
+		_:
+			print("unknown animation for ship body")
 
 
 func animate_engine_glow():
