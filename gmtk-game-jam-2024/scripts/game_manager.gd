@@ -43,22 +43,16 @@ func _process(delta: float) -> void:
 	# pin camera to engineer as they walk around
 	var engineer = players["engineer"].player
 	var engineer_relative_position = engineer.position
-	#print(engineer_relative_position)
 
 	var relative_angle = Vector2(0, 0).angle_to_point(engineer_relative_position)
 	var relative_distance = Vector2(0, 0).distance_to(engineer_relative_position) * 0.04
-	print(rad_to_deg(relative_angle))
-	#print(relative_distance)
 
 	var spaceship: Spaceship = players["zoomed_ship"].player
-	#print(spaceship.rotation_degrees)
 	var combined_angle = deg_to_rad(90) - relative_angle - deg_to_rad(spaceship.rotation_degrees)
 
-	print(rad_to_deg(combined_angle))
 	var new_point_location = rotated_point(
 		spaceship.global_position, combined_angle, relative_distance
 	)
-	#print(new_point_location)
 
 	var zoomed_camera = players["zoomed_ship"].camera
 	zoomed_camera.global_position = new_point_location

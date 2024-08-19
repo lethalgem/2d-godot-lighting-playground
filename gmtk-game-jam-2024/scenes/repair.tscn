@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://l7cwkj8n10kq"]
+[gd_scene load_steps=40 format=3 uid="uid://l7cwkj8n10kq"]
 
 [ext_resource type="Texture2D" uid="uid://jodr3m6ucygy" path="res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.png" id="1_5xdxt"]
 [ext_resource type="Script" path="res://scripts/repair.gd" id="1_jpkfy"]
@@ -179,6 +179,9 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lykem"]
+radius = 18.0278
+
 [node name="Repair" type="Node2D" node_paths=PackedStringArray("engineer")]
 visibility_layer = 2
 script = ExtResource("1_jpkfy")
@@ -208,3 +211,10 @@ shape = SubResource("RectangleShape2D_k3ijg")
 sprite_frames = SubResource("SpriteFrames_xbnnn")
 animation = &"Idle Down"
 frame_progress = 0.28609
+
+[node name="ComputerDetectionArea" type="Area2D" parent="Engineer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Engineer/ComputerDetectionArea"]
+shape = SubResource("CircleShape2D_lykem")
+
+[connection signal="area_entered" from="Engineer/ComputerDetectionArea" to="." method="_on_computer_detection_area_area_entered"]

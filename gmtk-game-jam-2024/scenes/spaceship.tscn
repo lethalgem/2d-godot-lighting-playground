@@ -297,6 +297,7 @@ ship_body_sprite = NodePath("ShipBody")
 engine_glow_sprite = NodePath("EngineGlow")
 
 [node name="ShipBody" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.529412)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_kdjbx")
 animation = &"shield"
@@ -318,6 +319,7 @@ metadata/_aseprite_wizard_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "9c954e681cb14dcc838f7b6c1f436294"
 
 [node name="EngineGlow" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.529412)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_5iocr")
 frame_progress = 0.597397
