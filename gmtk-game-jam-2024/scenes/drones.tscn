@@ -64,9 +64,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jtiye")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,9 +147,13 @@ script = ExtResource("1_mjdg6")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_4gv5u")
 animation = &"death"
+frame = 5
+frame_progress = 1.0
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_h4j8w")
+
+[node name="DebugCamera" type="Camera2D" parent="."]

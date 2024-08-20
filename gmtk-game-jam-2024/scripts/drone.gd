@@ -1,11 +1,13 @@
-class_name Drone extends Node2D
+class_name Drone
+extends Node2D
 
-@onready var sprite: AnimatedBody2D = %AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	animate(Vector2(100, 0))
+	print("animating to")
+	animate_death()
 	pass  # Replace with function body.
 
 
@@ -20,19 +22,22 @@ func move_to_point(point: Vector2):
 
 
 func animate_death():
-	await sprite.play("death")
+	sprite.play("death")
+	await sprite.animation_finished
+	print("freeing")
 	queue_free()
 
 
 func animate(point: Vector2):
 	var vector_to_point = point - position
-
+	print(vector_to_point)
 	var deg = rad_to_deg(vector_to_point.angle())
+	print(deg)
 
-	if deg > -45 || deg <= 45:
+	if deg > -45 && deg <= 45:
 		sprite.play("walk_right")
 	elif deg >= 45 && deg < 135:
-		sprite.play("walk_down")
+		sprite.play("walk_up")
 	elif deg >= 135 && deg > -135:
 		sprite.play("walk_left")
 	else:

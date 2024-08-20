@@ -130,9 +130,8 @@ shape = SubResource("RectangleShape2D_xjl3r")
 [node name="ComputerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_eqdn6")
-animation = &"dark_front"
-frame = 1
-frame_progress = 0.776186
+animation = &"dark_side"
+frame_progress = 0.15805
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
