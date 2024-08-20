@@ -51,7 +51,7 @@ func generate_rand_distance() -> int:
 	var my_array = [1, -1]
 	var weights = PackedFloat32Array([1, 1])
 
-	return rand.randf_range(200, 1500) * my_array[rand.rand_weighted(weights)]
+	return rand.randf_range(250, 1500) * my_array[rand.rand_weighted(weights)]
 
 
 func spawn_drone():
@@ -63,7 +63,7 @@ func spawn_drone():
 		instance.global_position.y = spaceship.global_position.y + generate_rand_distance()
 
 		instance.target = spaceship.global_position
-		instance.speed = RandomNumberGenerator.new().randf_range(125, 450)
+		instance.speed = RandomNumberGenerator.new().randf_range(250, 480)
 		drones.append(instance)
 
 
