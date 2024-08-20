@@ -37,9 +37,18 @@ func _physics_process(delta: float) -> void:
 func manageAsteroids():
 	if asteroid == null:
 		return
-	var astroidDistanceFromPlayer = spaceship.position.distance_to(asteroid.position)
+	var astroidDistanceFromPlayer = spaceship.global_position.distance_to(asteroid.global_position)
 	if astroidDistanceFromPlayer > MAX_RENDER_DISTANCE:
 		asteroid.queue_free()
+
+
+func generate_rand_distance() -> int:
+	var rand = RandomNumberGenerator.new()
+
+	var my_array = [1, -1]
+	var weights = PackedFloat32Array([1, 1])
+
+	return rand.randf_range(200, 1500) * my_array[rand.rand_weighted(weights)]
 
 
 func spawn_drone():
@@ -47,12 +56,9 @@ func spawn_drone():
 	for i in range(level):
 		var instance: Drone = drone_scene.instantiate()
 		add_child(instance)
-		instance.global_position.x = (
-			spaceship.position.x + RandomNumberGenerator.new().randf_range(125, 450)
-		)
-		instance.global_position.y = (
-			spaceship.position.y - RandomNumberGenerator.new().randf_range(125, 450)
-		)
+		instance.global_position.x = spaceship.global_position.x + generate_rand_distance()
+		instance.global_position.y = spaceship.global_position.y + generate_rand_distance()
+
 		instance.target = spaceship.global_position
 		instance.speed = RandomNumberGenerator.new().randf_range(125, 450)
 		drones.append(instance)
