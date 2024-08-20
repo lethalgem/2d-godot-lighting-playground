@@ -96,10 +96,10 @@ func _on_piloting_shields_down() -> void:
 	if tutorials_enabled:
 		VoiceLinePlayer.stream = lost
 		VoiceLinePlayer.play()
-		
+
 		dialogue_box.set_text("Pilot: We lost another COMPUTER! Get those shields back online now!
-	
-	
+
+
 		H: Toggle tutorials off", 5)
 
 
