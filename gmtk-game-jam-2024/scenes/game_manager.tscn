@@ -72,3 +72,6 @@ zoom = Vector2(2, 2)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_yr6mc")
+
+[connection signal="shields_down" from="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer/LeftSplitscreenViewport/Piloting" to="RightSplitscreenOverlayViewportContainer/RightSplitscreenOverlaySubViewport/Repair" method="_on_piloting_shields_down"]
+[connection signal="computer_repaired" from="RightSplitscreenOverlayViewportContainer/RightSplitscreenOverlaySubViewport/Repair" to="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer/LeftSplitscreenViewport/Piloting" method="_on_repair_computer_repaired"]

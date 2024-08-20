@@ -1,10 +1,13 @@
 class_name Piloting
 extends Node2D
 
-@export var spaceship: CharacterBody2D
+@export var spaceship: Spaceship
 @export var asteroid: CharacterBody2D
 @export var left_splitscreen_background: ParallaxBackground
 @export var right_splitscreen_background: ParallaxBackground
+@export var shields_up_time: float = 5.0  # seconds
+
+signal shields_down
 
 var drone_scene = preload("res://scenes/drones.tscn")
 var drones: Array = []
@@ -62,3 +65,10 @@ func spawn_drone():
 		instance.target = spaceship.global_position
 		instance.speed = RandomNumberGenerator.new().randf_range(125, 450)
 		drones.append(instance)
+
+
+func _on_repair_computer_repaired() -> void:
+	spaceship.bring_shields_online()
+	await get_tree().create_timer(shields_up_time).timeout
+	spaceship.take_shields_offline()
+	shields_down.emit()

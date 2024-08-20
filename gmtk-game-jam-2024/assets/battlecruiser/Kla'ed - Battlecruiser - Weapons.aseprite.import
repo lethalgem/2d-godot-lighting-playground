@@ -3,11 +3,12 @@
 importer="aseprite_wizard.plugin"
 type="SpriteFrames"
 uid="uid://bgv78fhb5vnub"
-valid=false
+path="res://.godot/imported/Kla'ed - Battlecruiser - Weapons.aseprite-ee62609de04e1cdb92123ac7de9ed0f4.res"
 
 [deps]
 
 source_file="res://assets/battlecruiser/Kla'ed - Battlecruiser - Weapons.aseprite"
+dest_files=["res://.godot/imported/Kla'ed - Battlecruiser - Weapons.aseprite-ee62609de04e1cdb92123ac7de9ed0f4.res"]
 
 [params]
 

@@ -1,11 +1,12 @@
-class_name Spaceship extends CharacterBody2D
+class_name Spaceship
+extends CharacterBody2D
 
 @export var ship_body_sprite: AnimatedSprite2D
 @export var engine_glow_sprite: AnimatedSprite2D
 
 # dictionary with animation names
 var animations := {default = "default", shield = "shield", death = "death"}
-var current_animation = animations.shield
+var current_animation = animations.default
 
 # Speed of the movement
 var speed = 0
@@ -73,3 +74,11 @@ func animate_engine_glow():
 		engine_glow_sprite.speed_scale = clamp(velocity.length() * 0.008, 0.005, 2)
 	else:
 		engine_glow_sprite.stop()
+
+
+func bring_shields_online():
+	current_animation = animations.shield
+
+
+func take_shields_offline():
+	current_animation = animations.default

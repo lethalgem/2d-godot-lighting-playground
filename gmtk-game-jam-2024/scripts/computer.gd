@@ -50,3 +50,4 @@ func computer_repaired():
 	computer_use_area.should_flash_bar = true
 	await get_tree().create_timer(1).timeout
 	computer_use_area.hide_progress_bar()
+	computer_use_area.reset_progress()

@@ -30,7 +30,7 @@ func _update_progress(percentage: float) -> float:
 
 
 func reset_progress():
-	progress_bar.value = false
+	progress_bar.value = 0
 
 
 func _process(delta: float) -> void:
