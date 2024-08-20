@@ -5,10 +5,12 @@ class_name Drone extends CharacterBody2D
 var target: Vector2
 var speed = 50
 
+var isDying = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print("animating to")
+	animate_death()
 	pass  # Replace with function body.
 
 
@@ -32,9 +34,11 @@ func animate_death():
 
 
 func animate(point: Vector2):
+	if isDying:
+		return
+
 	var vector_to_point = point - global_position
 	var deg = rad_to_deg(vector_to_point.angle())
-	print(deg)
 
 	if deg > -45 && deg <= 45:
 		sprite.play("walk_right")
@@ -47,4 +51,6 @@ func animate(point: Vector2):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("AREA entered")
+	isDying = true
 	animate_death()

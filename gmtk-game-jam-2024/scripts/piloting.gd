@@ -10,12 +10,16 @@ var drone_scene = preload("res://scenes/drones.tscn")
 var drones: Array = []
 var MAX_RENDER_DISTANCE = 1000
 
+var level = 0
+
 
 func _ready() -> void:
 	spawn_drone()
 
 
 func _process(delta: float) -> void:
+	if !drones.size():
+		spawn_drone()
 	manageAsteroids()
 
 
@@ -39,10 +43,16 @@ func manageAsteroids():
 
 
 func spawn_drone():
-	var instance: Drone = drone_scene.instantiate()
-	add_child(instance)
-	instance.global_position.x = spaceship.position.x - 250
-	instance.global_position.y = spaceship.position.y - 250
-	instance.target = spaceship.global_position
-	instance.speed = RandomNumberGenerator.new().randf_range(125, 450)
-	drones.append(instance)
+	level += 1
+	for i in range(level):
+		var instance: Drone = drone_scene.instantiate()
+		add_child(instance)
+		instance.global_position.x = (
+			spaceship.position.x + RandomNumberGenerator.new().randf_range(125, 450)
+		)
+		instance.global_position.y = (
+			spaceship.position.y - RandomNumberGenerator.new().randf_range(125, 450)
+		)
+		instance.target = spaceship.global_position
+		instance.speed = RandomNumberGenerator.new().randf_range(125, 450)
+		drones.append(instance)
