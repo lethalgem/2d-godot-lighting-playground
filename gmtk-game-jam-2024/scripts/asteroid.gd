@@ -14,6 +14,11 @@ func _process(delta: float) -> void:
 	velocity = Vector2.from_angle(direction) * speed
 
 
+func randomize_vector():
+	direction = RandomNumberGenerator.new().randf_range(0, 2 * PI)
+	speed = RandomNumberGenerator.new().randf_range(50, 125)
+
+
 func _physics_process(delta: float) -> void:
 	move_and_slide()
 	pass

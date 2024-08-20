@@ -45,11 +45,10 @@ func _physics_process(delta: float) -> void:
 
 
 func manageAsteroids():
-	if asteroid == null:
-		return
 	var astroidDistanceFromPlayer = spaceship.global_position.distance_to(asteroid.global_position)
 	if astroidDistanceFromPlayer > MAX_RENDER_DISTANCE:
-		asteroid.queue_free()
+		asteroid.global_position.x = spaceship.global_position.x + generate_rand_distance()
+		asteroid.global_position.y = spaceship.global_position.y + generate_rand_distance()
 
 
 func generate_rand_distance() -> int:
