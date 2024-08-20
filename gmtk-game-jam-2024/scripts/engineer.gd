@@ -5,11 +5,12 @@ extends CharacterBody2D
 @export var speed: int = 250
 
 @onready var directions_traveled = Array()  # can assume never empty because we push a value on ready
-@onready var current_state = state.Walk
+@onready var current_state = state.Idle
 
 
 func _ready() -> void:
 	directions_traveled.push_front(direction.Down)
+	sprite.play("Idle Down")
 
 
 enum direction {

@@ -16,6 +16,8 @@ var rotation_speed = 90.0
 var MAX_SPEED = 500
 var MIN_SPEED = -50
 
+var is_dying = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -50,6 +52,9 @@ func _physics_process(delta: float) -> void:
 
 
 func animate_ship_body():
+	if is_dying:
+		return
+
 	match current_animation:
 		animations.default:
 			ship_body_sprite.visible = true
@@ -63,7 +68,9 @@ func animate_ship_body():
 			ship_body_sprite.visible = true
 			engine_glow_sprite.visible = false
 			ship_body_sprite.play(animations.death)
-			# should free the child here most likely
+			is_dying = true
+			await ship_body_sprite.animation_finished
+			get_tree().reload_current_scene()
 		_:
 			print("unknown animation for ship body")
 
@@ -82,3 +89,8 @@ func bring_shields_online():
 
 func take_shields_offline():
 	current_animation = animations.default
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if current_animation != animations.shield and (area is DroneArea):
+		current_animation = animations.death

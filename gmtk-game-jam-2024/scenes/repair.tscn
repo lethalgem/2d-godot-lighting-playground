@@ -212,7 +212,6 @@ shape = SubResource("RectangleShape2D_k3ijg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Engineer"]
 sprite_frames = SubResource("SpriteFrames_xbnnn")
 animation = &"Idle Down"
-frame_progress = 0.28609
 
 [node name="ComputerDetectionArea" type="Area2D" parent="Engineer"]
 
