@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://c0wbb8xocrkw6" path="res://assets/asteroids/asteroid.png" id="6_kc6ky"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b3axd"]
-load_path = "res://.godot/imported/planets_bg3.png-09797c3e1fb551567fe3fd4a6f37da7b.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4cha1"]
 radius = 680.0

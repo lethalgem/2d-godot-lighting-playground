@@ -1,0 +1,155 @@
+[gd_scene load_steps=27 format=3 uid="uid://cxjhrdj30v18p"]
+
+[ext_resource type="Texture2D" uid="uid://digjnt8suq4af" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_E01.png" id="1_3cuiy"]
+[ext_resource type="Script" path="res://scripts/drone.gd" id="1_mjdg6"]
+[ext_resource type="Texture2D" uid="uid://c1utubwec5aci" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_E02.png" id="2_jrjai"]
+[ext_resource type="Texture2D" uid="uid://dj2fieqsw6jat" path="res://scenes/Kla'ed - Battlecruiser - Destruction.png" id="2_pg0j1"]
+[ext_resource type="Texture2D" uid="uid://d2qkac80lher6" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_E03.png" id="3_6ns8f"]
+[ext_resource type="Texture2D" uid="uid://bo1melgefma2b" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_E04.png" id="4_n4f8x"]
+[ext_resource type="Texture2D" uid="uid://cqlgxdrbnhfhd" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_N01.png" id="5_ljc56"]
+[ext_resource type="Texture2D" uid="uid://btxaowfnp8njm" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_N02.png" id="6_7at1o"]
+[ext_resource type="Texture2D" uid="uid://ebm41bdxeni2" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_N03.png" id="7_kqcad"]
+[ext_resource type="Texture2D" uid="uid://cexf31k4e0jdr" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_N04.png" id="8_5o6d2"]
+[ext_resource type="Texture2D" uid="uid://cjkopnr6so2qe" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_S01.png" id="9_w26mb"]
+[ext_resource type="Texture2D" uid="uid://d1da1k4x1f52i" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_S02.png" id="10_k13so"]
+[ext_resource type="Texture2D" uid="uid://jchwl004ifsg" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_S03.png" id="11_frybi"]
+[ext_resource type="Texture2D" uid="uid://b4i7gb0tjubmv" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_S04.png" id="12_dri7o"]
+[ext_resource type="Texture2D" uid="uid://dg5qtm8tftbpo" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_W01.png" id="13_44yh7"]
+[ext_resource type="Texture2D" uid="uid://co3aqsig2ux8a" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_W02.png" id="14_5l3al"]
+[ext_resource type="Texture2D" uid="uid://dcn3xxfual14g" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_W03.png" id="15_4r5wc"]
+[ext_resource type="Texture2D" uid="uid://d2itl10aw0yto" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_W04.png" id="16_sd6io"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ins0g"]
+atlas = ExtResource("2_pg0j1")
+region = Rect2(256, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d5nl6"]
+atlas = ExtResource("2_pg0j1")
+region = Rect2(384, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwuie"]
+atlas = ExtResource("2_pg0j1")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6a38"]
+atlas = ExtResource("2_pg0j1")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyoql"]
+atlas = ExtResource("2_pg0j1")
+region = Rect2(256, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jtiye"]
+atlas = ExtResource("2_pg0j1")
+region = Rect2(384, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gv5u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ins0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d5nl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwuie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6a38")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyoql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jtiye")
+}],
+"loop": true,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_w26mb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_k13so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_frybi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_dri7o")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_44yh7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_5l3al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4r5wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_sd6io")
+}],
+"loop": true,
+"name": &"walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3cuiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jrjai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ns8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n4f8x")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ljc56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7at1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kqcad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5o6d2")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4j8w"]
+radius = 11.0
+
+[node name="Drone" type="Node2D"]
+script = ExtResource("1_mjdg6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_4gv5u")
+animation = &"death"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_h4j8w")
