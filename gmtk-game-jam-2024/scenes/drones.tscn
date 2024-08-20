@@ -19,6 +19,9 @@
 [ext_resource type="Texture2D" uid="uid://dcn3xxfual14g" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_W03.png" id="15_4r5wc"]
 [ext_resource type="Texture2D" uid="uid://d2itl10aw0yto" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/sentry drone/red/walk/sentry_drone_red_walk_W04.png" id="16_sd6io"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_h4j8w"]
+radius = 4.0
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_ins0g"]
 atlas = ExtResource("2_pg0j1")
 region = Rect2(256, 128, 128, 128)
@@ -137,23 +140,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h4j8w"]
-radius = 11.0
-
-[node name="Drone" type="Node2D"]
+[node name="Drone" type="CharacterBody2D"]
 script = ExtResource("1_mjdg6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_h4j8w")
+disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_4gv5u")
-animation = &"death"
-frame = 5
-frame_progress = 1.0
+animation = &"walk_down"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="DebugCamera" type="Camera2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_h4j8w")
 
-[node name="DebugCamera" type="Camera2D" parent="."]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
