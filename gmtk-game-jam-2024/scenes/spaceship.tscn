@@ -288,11 +288,13 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_10jp5"]
-radius = 51.0098
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c862d"]
+radius = 15.2419
+height = 32.5872
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw8fb"]
-size = Vector2(35, 88)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1duig"]
+radius = 20.25
+height = 90.0
 
 [node name="Spaceship" type="CharacterBody2D" node_paths=PackedStringArray("ship_body_sprite", "engine_glow_sprite")]
 script = ExtResource("1_qpaul")
@@ -340,15 +342,16 @@ metadata/_aseprite_wizard_interface_config_ = {
 metadata/_aseprite_wizard_source_file_hash_ = "7f739bf60a1835f198525531fef32103"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-shape = SubResource("CircleShape2D_10jp5")
-disabled = true
+position = Vector2(0, -7)
+scale = Vector2(-0.918519, -2.70044)
+shape = SubResource("CapsuleShape2D_c862d")
 one_way_collision_margin = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, -7)
-shape = SubResource("RectangleShape2D_rw8fb")
+position = Vector2(0.5, -6)
+scale = Vector2(0.666667, 1)
+shape = SubResource("CapsuleShape2D_1duig")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

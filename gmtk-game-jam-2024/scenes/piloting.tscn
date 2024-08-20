@@ -10,8 +10,9 @@
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_b3axd"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4cha1"]
-radius = 680.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rxf8n"]
+radius = 427.2
+height = 1177.99
 
 [node name="Piloting" type="Node2D" node_paths=PackedStringArray("spaceship", "asteroid", "left_splitscreen_background", "right_splitscreen_background")]
 visibility_layer = 3
@@ -110,6 +111,14 @@ metadata/_aseprite_wizard_interface_config_ = {
 }
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="asteroid"]
-position = Vector2(5.84215, -12.8792)
-shape = SubResource("CircleShape2D_4cha1")
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="asteroid"]
+position = Vector2(-25.758, -11.6844)
+rotation = -0.579449
+shape = SubResource("CapsuleShape2D_rxf8n")
+
+[node name="Area2D" type="Area2D" parent="asteroid"]
+
+[node name="CollisionPolygon2D2" type="CollisionShape2D" parent="asteroid/Area2D"]
+position = Vector2(-25.7579, -11.6843)
+rotation = -0.579449
+shape = SubResource("CapsuleShape2D_rxf8n")
