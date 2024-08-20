@@ -14,7 +14,7 @@ var speed = 0
 var rotation_speed = 90.0
 
 var MAX_SPEED = 500
-var MIN_SPEED = -50
+var MIN_SPEED = -200
 
 var is_dying = false
 

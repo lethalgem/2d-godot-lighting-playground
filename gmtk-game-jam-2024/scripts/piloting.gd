@@ -11,7 +11,7 @@ signal shields_down
 
 var drone_scene = preload("res://scenes/drones.tscn")
 var drones: Array = []
-var MAX_RENDER_DISTANCE = 1000
+var MAX_RENDER_DISTANCE = 3000
 
 var level = 1
 
@@ -47,17 +47,17 @@ func _physics_process(delta: float) -> void:
 func manageAsteroids():
 	var astroidDistanceFromPlayer = spaceship.global_position.distance_to(asteroid.global_position)
 	if astroidDistanceFromPlayer > MAX_RENDER_DISTANCE:
-		asteroid.global_position.x = spaceship.global_position.x + generate_rand_distance()
-		asteroid.global_position.y = spaceship.global_position.y + generate_rand_distance()
+		asteroid.global_position.x = spaceship.global_position.x + generate_rand_distance(500, 501)
+		asteroid.global_position.y = spaceship.global_position.y + generate_rand_distance(500, 501)
 
 
-func generate_rand_distance() -> int:
+func generate_rand_distance(min: int, max: int) -> int:
 	var rand = RandomNumberGenerator.new()
 
 	var my_array = [1, -1]
 	var weights = PackedFloat32Array([1, 1])
 
-	return rand.randf_range(250, 1500) * my_array[rand.rand_weighted(weights)]
+	return rand.randf_range(min, max) * my_array[rand.rand_weighted(weights)]
 
 
 func spawn_drone():
@@ -65,8 +65,8 @@ func spawn_drone():
 	for i in range(level):
 		var instance: Drone = drone_scene.instantiate()
 		add_child(instance)
-		instance.global_position.x = spaceship.global_position.x + generate_rand_distance()
-		instance.global_position.y = spaceship.global_position.y + generate_rand_distance()
+		instance.global_position.x = spaceship.global_position.x + generate_rand_distance(400, 2000)
+		instance.global_position.y = spaceship.global_position.y + generate_rand_distance(400, 2000)
 
 		instance.target = spaceship.global_position
 		instance.speed = RandomNumberGenerator.new().randf_range(250, 480)
