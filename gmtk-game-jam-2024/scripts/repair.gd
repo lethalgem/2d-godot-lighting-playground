@@ -43,11 +43,9 @@ func computer_successfully_repaired(id):
 	computer.computer_repaired()
 	computer_to_repair_id = -1
 	computer_repaired.emit()
-	print("successfully repaired computer" + get_computer_name(id))
 
 
 func assign_next_computer_to_repair():
-	print("assigning computer to repair")
 	var random_id = RandomNumberGenerator.new().randi_range(0, 3)
 	if random_id != last_computer_repaired_id:
 		computer_to_repair_id = random_id
@@ -65,11 +63,8 @@ func set_next_to_computer(is_touching: bool, area: ComputerUseArea):
 	is_touching_computer = is_touching
 	if is_touching:
 		touching_computer = area
-		print("touching computer " + get_computer_name(area._get_computer_id()))
 	else:
 		touching_computer = null
-		print("no longer touching computer " + get_computer_name(area._get_computer_id()))
-
 
 func _on_piloting_shields_down() -> void:
 	assign_next_computer_to_repair()

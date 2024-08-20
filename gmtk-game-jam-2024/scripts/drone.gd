@@ -29,7 +29,6 @@ func _physics_process(delta: float) -> void:
 func animate_death():
 	sprite.play("death")
 	await sprite.animation_finished
-	print("freeing")
 	queue_free()
 
 
@@ -51,6 +50,5 @@ func animate(point: Vector2):
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("AREA entered")
 	isDying = true
 	animate_death()
