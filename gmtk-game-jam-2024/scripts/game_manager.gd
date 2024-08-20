@@ -83,14 +83,17 @@ func show_controls_tutorial():
 
 
 func _on_piloting_shields_down() -> void:
-	dialogue_box.set_text("Pilot: We lost another COMPUTER! Get those shields back online now!
-
-
-	H: Toggle tutorials off", 5)
+	if tutorials_enabled:
+		dialogue_box.set_text("Pilot: We lost another COMPUTER! Get those shields back online now!
+	
+	
+		H: Toggle tutorials off", 5)
 
 
 func _on_repair_computer_repaired() -> void:
-	dialogue_box.set_text("Pilot: Bussin! Now RAM those DRONES while the shields are up!
+	if tutorials_enabled:
+
+		dialogue_box.set_text("Pilot: Bussin! Now RAM those DRONES while the shields are up!
 
 
-	H: Toggle tutorials off", 5)
+		H: Toggle tutorials off", 5)
