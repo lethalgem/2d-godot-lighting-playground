@@ -182,10 +182,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_lykem"]
 radius = 18.0278
 
-[node name="Repair" type="Node2D" node_paths=PackedStringArray("engineer")]
+[node name="Repair" type="Node2D" node_paths=PackedStringArray("engineer", "level")]
 visibility_layer = 2
 script = ExtResource("1_jpkfy")
 engineer = NodePath("Engineer")
+level = NodePath("Ship Indoors")
 
 [node name="TestShip" type="Sprite2D" parent="."]
 visible = false
@@ -194,6 +195,7 @@ scale = Vector2(25, 25)
 texture = ExtResource("1_5xdxt")
 
 [node name="Ship Indoors" parent="." instance=ExtResource("2_huixh")]
+unique_name_in_owner = true
 position = Vector2(0, -1)
 
 [node name="Engineer" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite")]

@@ -42,5 +42,11 @@ func animate():
 			animated_sprite.play("white_front")
 
 
-func should_show_progress_bar(should_show: bool):
-	progress_bar.visibile = should_show
+func computer_needs_to_be_repaired():
+	computer_use_area.should_flash_bar = true
+
+
+func computer_repaired():
+	computer_use_area.should_flash_bar = true
+	await get_tree().create_timer(1).timeout
+	computer_use_area.hide_progress_bar()

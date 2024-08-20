@@ -136,6 +136,7 @@ frame_progress = 0.776186
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = -20.0
 offset_top = -18.0
 offset_right = 20.0

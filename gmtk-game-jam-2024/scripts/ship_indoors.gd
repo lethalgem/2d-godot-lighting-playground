@@ -36,6 +36,20 @@ func disable_door(door: TileMapLayer):
 	door.collision_enabled = false
 	pass
 
+func get_computer_with_id(id: computers) -> Computer:
+	match id:
+		computers.med:
+			return med_computer
+		computers.cargo:
+			return cargo_computer
+		computers.area01:
+			return area01_computer
+		computers.area02:
+			return area02_computer
+		_:
+			print("unknown id provided, giving default computer")
+			return med_computer
+
 func assign_computer_ids():
 	med_computer.computer_id = computers.med
 	cargo_computer.computer_id = computers.cargo
