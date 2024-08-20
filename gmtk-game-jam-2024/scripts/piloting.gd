@@ -13,11 +13,18 @@ var drone_scene = preload("res://scenes/drones.tscn")
 var drones: Array = []
 var MAX_RENDER_DISTANCE = 1000
 
-var level = 0
+var level = 1
 
 
 func _ready() -> void:
-	spawn_drone()
+	var instance: Drone = drone_scene.instantiate()
+	add_child(instance)
+	instance.global_position.x = spaceship.global_position.x + 500
+	instance.global_position.y = spaceship.global_position.y + 500
+
+	instance.target = spaceship.global_position
+	instance.speed = 100
+	drones.append(instance)
 
 
 func _process(delta: float) -> void:
