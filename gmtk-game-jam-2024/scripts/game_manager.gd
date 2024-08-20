@@ -25,6 +25,7 @@ extends Node2D
 	}
 }
 
+var tutorials_enabled = true
 
 func _ready():
 	# assign the ship's level view to the split screen
@@ -40,6 +41,11 @@ func _ready():
 			node.player.add_child(remote_transform)
 
 	show_controls_tutorial()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("toggle_tutorial"):
+		tutorials_enabled = !tutorials_enabled
+		dialogue_box.visible = tutorials_enabled
 
 func _process(delta: float) -> void:
 	# pin camera to engineer as they walk around
@@ -66,9 +72,25 @@ func rotated_point(_center, _angle, _distance):
 
 
 func show_controls_tutorial():
-	dialogue_box.set_text("Pilot: Find the busted computer and those shields up now! We've got incoming drones!
+	if tutorials_enabled:
+		dialogue_box.set_text("Pilot: Find the busted COMPUTER and those shields up now! We've got incoming DRONES!
 
-WASD: Move spaceship
-ARROWS: Move engineer
-SPACE or ENTER: Repair Computer
-", 8)
+	WASD: Move spaceship
+	ARROWS: Move engineer
+	SPACE or ENTER: Repair Computer
+	H: Toggle tutorials off
+	", 8)
+
+
+func _on_piloting_shields_down() -> void:
+	dialogue_box.set_text("Pilot: We lost another COMPUTER! Get those shields back online now!
+
+
+	H: Toggle tutorials off", 5)
+
+
+func _on_repair_computer_repaired() -> void:
+	dialogue_box.set_text("Pilot: Bussin! Now RAM those DRONES while the shields are up!
+
+
+	H: Toggle tutorials off", 5)

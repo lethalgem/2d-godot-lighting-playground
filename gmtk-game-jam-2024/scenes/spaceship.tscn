@@ -296,10 +296,11 @@ height = 32.5872
 radius = 20.25
 height = 90.0
 
-[node name="Spaceship" type="CharacterBody2D" node_paths=PackedStringArray("ship_body_sprite", "engine_glow_sprite")]
+[node name="Spaceship" type="CharacterBody2D" node_paths=PackedStringArray("ship_body_sprite", "engine_glow_sprite", "area")]
 script = ExtResource("1_qpaul")
 ship_body_sprite = NodePath("ShipBody")
 engine_glow_sprite = NodePath("EngineGlow")
+area = NodePath("SpaceshipArea")
 
 [node name="ShipBody" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -347,11 +348,11 @@ scale = Vector2(-0.918519, -2.70044)
 shape = SubResource("CapsuleShape2D_c862d")
 one_way_collision_margin = 0.0
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="SpaceshipArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceshipArea"]
 position = Vector2(0.5, -6)
 scale = Vector2(0.666667, 1)
 shape = SubResource("CapsuleShape2D_1duig")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="SpaceshipArea" to="." method="_on_area_2d_area_entered"]

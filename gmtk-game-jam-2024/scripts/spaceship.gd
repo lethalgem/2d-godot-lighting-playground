@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 @export var ship_body_sprite: AnimatedSprite2D
 @export var engine_glow_sprite: AnimatedSprite2D
+@export var area: Area2D
 
 # dictionary with animation names
 var animations := {default = "default", shield = "shield", death = "death"}
@@ -85,10 +86,12 @@ func animate_engine_glow():
 
 func bring_shields_online():
 	current_animation = animations.shield
+	area.scale.x = 2
 
 
 func take_shields_offline():
 	current_animation = animations.default
+	area.scale.x = 1
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
