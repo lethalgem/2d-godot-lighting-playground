@@ -7,7 +7,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	print("animating to")
-	animate_death()
 	pass  # Replace with function body.
 
 
@@ -18,7 +17,7 @@ func _process(delta: float) -> void:
 
 func move_to_point(point: Vector2):
 	var tween = get_tree().create_tween()
-	tween.tween_property(self, "position", point, 1)
+	tween.tween_property(self, "global_position", point, 10)
 
 
 func animate_death():
