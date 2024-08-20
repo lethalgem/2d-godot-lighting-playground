@@ -1,6 +1,7 @@
 class_name GameManager
 extends Node2D
 
+@onready var dialogue_box: DialogueBox = %DialogueBox
 @onready var players := {
 	"ship":
 	{
@@ -38,6 +39,7 @@ func _ready():
 			remote_transform.remote_path = node.camera.get_path()
 			node.player.add_child(remote_transform)
 
+	show_controls_tutorial()
 
 func _process(delta: float) -> void:
 	# pin camera to engineer as they walk around
@@ -61,3 +63,12 @@ func _process(delta: float) -> void:
 
 func rotated_point(_center, _angle, _distance):
 	return _center + Vector2(sin(_angle), cos(_angle)) * _distance
+
+
+func show_controls_tutorial():
+	dialogue_box.set_text("Pilot: Find the busted computer and those shields up now! We've got incoming drones!
+
+WASD: Move spaceship
+ARROWS: Move engineer
+SPACE or ENTER: Repair Computer
+", 8)
