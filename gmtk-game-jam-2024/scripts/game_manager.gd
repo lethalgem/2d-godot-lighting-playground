@@ -1,6 +1,12 @@
 class_name GameManager
 extends Node2D
 
+
+var bussing = preload("res://assets/voice_lines/bussing.mp3")
+var incoming = preload("res://assets/voice_lines/incoming_drones.mp3")
+var lost = preload("res://assets/voice_lines/lost_computer.mp3")
+
+@onready var VoiceLinePlayer : AudioStreamPlayer = %VoiceLinePlayer
 @onready var level_label: Label = %LevelLabel
 @onready var dialogue_box: DialogueBox = %DialogueBox
 @onready var players := {
@@ -74,7 +80,10 @@ func rotated_point(_center, _angle, _distance):
 
 func show_controls_tutorial():
 	if tutorials_enabled:
-		dialogue_box.set_text("Pilot: Find the busted COMPUTER and those shields up now! We've got incoming DRONES!
+		VoiceLinePlayer.stream = incoming
+		VoiceLinePlayer.play()
+
+		dialogue_box.set_text("Pilot: Find the busted COMPUTER and those shields back up now! We've got incoming DRONES!
 
 	WASD: Move spaceship
 	ARROWS: Move engineer
@@ -85,6 +94,9 @@ func show_controls_tutorial():
 
 func _on_piloting_shields_down() -> void:
 	if tutorials_enabled:
+		VoiceLinePlayer.stream = lost
+		VoiceLinePlayer.play()
+		
 		dialogue_box.set_text("Pilot: We lost another COMPUTER! Get those shields back online now!
 	
 	
@@ -93,6 +105,8 @@ func _on_piloting_shields_down() -> void:
 
 func _on_repair_computer_repaired() -> void:
 	if tutorials_enabled:
+		VoiceLinePlayer.stream = bussing
+		VoiceLinePlayer.play()
 
 		dialogue_box.set_text("Pilot: Bussin! Now RAM those DRONES while the shields are up!
 

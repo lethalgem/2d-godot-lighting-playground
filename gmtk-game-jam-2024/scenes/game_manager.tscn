@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c23wxpxl7cocu"]
+[gd_scene load_steps=9 format=3 uid="uid://c23wxpxl7cocu"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_smdkj"]
 [ext_resource type="PackedScene" uid="uid://budt3ysa5gk1b" path="res://scenes/piloting.tscn" id="1_ul1dy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://l7cwkj8n10kq" path="res://scenes/repair.tscn" id="3_k7qbc"]
 [ext_resource type="AudioStream" uid="uid://1mbocy3kkipm" path="res://assets/music/Cyberpunk Dark Synthwave - Dark Future  Royalty Free Copyright Safe Music_trimmed.mp3" id="5_yr6mc"]
 [ext_resource type="Script" path="res://scripts/dialogue_box.gd" id="6_hub56"]
+[ext_resource type="AudioStream" uid="uid://bxrhxtme1xgta" path="res://assets/voice_lines/bussing.mp3" id="6_ialhd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7icpt"]
 bg_color = Color(0.30211, 0.919529, 0.27023, 0.654902)
@@ -81,6 +82,11 @@ zoom = Vector2(2, 2)
 stream = ExtResource("5_yr6mc")
 volume_db = -25.662
 autoplay = true
+
+[node name="VoiceLinePlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_ialhd")
+volume_db = -20.26
 
 [node name="LevelLabel" type="Label" parent="."]
 unique_name_in_owner = true
