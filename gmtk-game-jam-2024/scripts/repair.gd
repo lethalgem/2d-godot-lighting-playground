@@ -47,11 +47,14 @@ func computer_successfully_repaired(id):
 
 
 func assign_next_computer_to_repair():
+	print("assigning computer to repair")
 	var random_id = RandomNumberGenerator.new().randi_range(0, 3)
 	if random_id != last_computer_repaired_id:
 		computer_to_repair_id = random_id
 		var computer = level.get_computer_with_id(computer_to_repair_id)
 		computer.computer_needs_to_be_repaired()
+	else:
+		assign_next_computer_to_repair()
 
 
 func get_computer_name(id: int) -> String:

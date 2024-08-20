@@ -43,6 +43,7 @@ func animate():
 
 
 func computer_needs_to_be_repaired():
+	print("flashing")
 	computer_use_area.should_flash_bar = true
 
 

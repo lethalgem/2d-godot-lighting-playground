@@ -102,7 +102,7 @@ animations = [{
 }]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvjf6"]
-bg_color = Color(0.903627, 0.726554, 0.196689, 0.756863)
+bg_color = Color(0, 0.854902, 0.854902, 1)
 corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
@@ -131,7 +131,7 @@ shape = SubResource("RectangleShape2D_xjl3r")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_eqdn6")
 animation = &"dark_side"
-frame_progress = 0.185443
+frame_progress = 0.44481
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
