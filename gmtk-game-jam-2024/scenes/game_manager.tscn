@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c23wxpxl7cocu"]
+[gd_scene load_steps=6 format=3 uid="uid://c23wxpxl7cocu"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_smdkj"]
 [ext_resource type="PackedScene" uid="uid://budt3ysa5gk1b" path="res://scenes/piloting.tscn" id="1_ul1dy"]
 [ext_resource type="Script" path="res://scripts/right_splitscreen_overlay.gd" id="3_ghbi3"]
 [ext_resource type="PackedScene" uid="uid://l7cwkj8n10kq" path="res://scenes/repair.tscn" id="3_k7qbc"]
+[ext_resource type="AudioStream" uid="uid://1mbocy3kkipm" path="res://assets/music/Cyberpunk Dark Synthwave - Dark Future  Royalty Free Copyright Safe Music_trimmed.mp3" id="5_yr6mc"]
 
 [node name="Game Manager" type="Node2D"]
 script = ExtResource("1_smdkj")
@@ -68,3 +69,6 @@ unique_name_in_owner = true
 [node name="RightSplitscreenOverlayCamera2D" type="Camera2D" parent="RightSplitscreenOverlayViewportContainer/RightSplitscreenOverlaySubViewport"]
 unique_name_in_owner = true
 zoom = Vector2(2, 2)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_yr6mc")
