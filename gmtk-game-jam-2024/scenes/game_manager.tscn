@@ -82,6 +82,16 @@ stream = ExtResource("5_yr6mc")
 volume_db = -25.662
 autoplay = true
 
+[node name="LevelLabel" type="Label" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.654902)
+offset_left = 398.0
+offset_top = 11.0
+offset_right = 551.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 42
+text = "LEVEL 1"
+
 [node name="DialogueBox" type="Control" parent="." node_paths=PackedStringArray("label")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(1920, 1080)
@@ -123,6 +133,7 @@ SPACE or ENTER: Repair Computer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[connection signal="level_changed" from="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer/LeftSplitscreenViewport/Piloting" to="." method="_on_piloting_level_changed"]
 [connection signal="shields_down" from="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer/LeftSplitscreenViewport/Piloting" to="." method="_on_piloting_shields_down"]
 [connection signal="shields_down" from="SplitscreenHBoxContainer/LeftSplitscreenViewportContainer/LeftSplitscreenViewport/Piloting" to="RightSplitscreenOverlayViewportContainer/RightSplitscreenOverlaySubViewport/Repair" method="_on_piloting_shields_down"]
 [connection signal="computer_repaired" from="RightSplitscreenOverlayViewportContainer/RightSplitscreenOverlaySubViewport/Repair" to="." method="_on_repair_computer_repaired"]

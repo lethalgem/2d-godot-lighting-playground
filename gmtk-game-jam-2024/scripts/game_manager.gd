@@ -1,6 +1,7 @@
 class_name GameManager
 extends Node2D
 
+@onready var level_label: Label = %LevelLabel
 @onready var dialogue_box: DialogueBox = %DialogueBox
 @onready var players := {
 	"ship":
@@ -94,3 +95,7 @@ func _on_repair_computer_repaired() -> void:
 
 
 	H: Toggle tutorials off", 5)
+
+
+func _on_piloting_level_changed(number: int) -> void:
+	level_label.text = "Level: " + str(number)

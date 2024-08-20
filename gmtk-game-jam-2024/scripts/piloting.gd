@@ -8,12 +8,16 @@ extends Node2D
 @export var shields_up_time: float = 5.0  # seconds
 
 signal shields_down
+signal level_changed(number: int)
 
 var drone_scene = preload("res://scenes/drones.tscn")
 var drones: Array = []
 var MAX_RENDER_DISTANCE = 3000
 
-var level = 1
+var level = 1:
+	set(value):
+		level_changed.emit(value)
+		level
 
 
 func _ready() -> void:
