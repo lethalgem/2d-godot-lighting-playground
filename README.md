@@ -1,8 +1,9 @@
-# gmtk-game-jam-2024
+# Shields Up, RAMpage!
+For our submission to the [GMTK Game Jam 2024](https://itch.io/jam/gmtk-2024)
+
 [Submission Page](https://itch.io/jam/gmtk-2024/rate/2911361)
 
-
-## Shields Up, RAMpage!
+## Description
 Shields Up, RAMpage! is a high-octane, split-screen space adventure where you juggle two roles simultaneously in a single-player experience. On one side, you’re the daring pilot of a spaceship, dodging asteroids and evading hostile drones in deep space. On the other, you’re the ship’s engineer, racing between control rooms to repair critical systems and bring your shields online. Once those shields are up, it's time to go on the offensive—turning your ship into a battering ram to smash your enemies to pieces. Manage your resources, time your moves, and survive the onslaught in this thrilling blend of action, strategy, and split-second decision-making!
 
 ## Developer Notes:
@@ -26,3 +27,21 @@ When we began the jam we had one goal in mind: innovate. I believe we've done ju
 [DithArt's Sci-Fi Characters](https://dithart.itch.io/ditharts-sci-fi-characters)
 
 [DithArt's Sci-Fi Tileset](https://dithart.itch.io/sci-fi-tileset)
+
+## Results
+Among 7,625 entries
+| Criteria  | Rank  | Score* | Raw Score |
+|-----------|-------|--------|-----------|
+| Creativity | #3631 | 2.940  | 3.667     |
+| Style     | #4124 | 2.673  | 3.333     |
+| Overall   | #4387 | 2.613  | 3.259     |
+| Enjoyment | #4994 | 2.227  | 2.778     |
+
+Rating Distribution
+| Rating  | Percentage |
+|---------|------------|
+| 5 star  | 10%        |
+| 4 star  | 23.3%      |
+| 3 star  | 36.7%      |
+| 2 star  | 20%        |
+| 1 star  | 10%        |
