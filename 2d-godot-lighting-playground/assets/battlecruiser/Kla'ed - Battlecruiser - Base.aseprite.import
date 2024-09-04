@@ -1,0 +1,18 @@
+[remap]
+
+importer="aseprite_wizard.plugin"
+type="SpriteFrames"
+uid="uid://t0lj16x1gq58"
+path="res://.godot/imported/Kla'ed - Battlecruiser - Base.aseprite-8a3f2fee03a8e046157bed6494752de0.res"
+
+[deps]
+
+source_file="res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.aseprite"
+dest_files=["res://.godot/imported/Kla'ed - Battlecruiser - Base.aseprite-8a3f2fee03a8e046157bed6494752de0.res"]
+
+[params]
+
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+sheet_type="Packed"

@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cgo0mvpea3nww"
+path="res://.godot/imported/spaceorcBG_walk_W01.png-5bc6425ac1d1909d40b9c0620fccad6e.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space orc/space_orc_big_gun/walk/spaceorcBG_walk_W01.png"
+dest_files=["res://.godot/imported/spaceorcBG_walk_W01.png-5bc6425ac1d1909d40b9c0620fccad6e.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

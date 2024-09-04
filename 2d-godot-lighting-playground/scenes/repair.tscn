@@ -1,0 +1,250 @@
+[gd_scene load_steps=43 format=3 uid="uid://l7cwkj8n10kq"]
+
+[ext_resource type="Texture2D" uid="uid://bw5kwd5mhkabm" path="res://assets/battlecruiser/Kla'ed - Battlecruiser - Base.png" id="1_5xdxt"]
+[ext_resource type="Script" path="res://scripts/repair.gd" id="1_jpkfy"]
+[ext_resource type="PackedScene" uid="uid://bxa2ixv0aodua" path="res://scenes/ship_indoors.tscn" id="2_huixh"]
+[ext_resource type="Script" path="res://scripts/engineer.gd" id="3_4tgig"]
+[ext_resource type="Texture2D" uid="uid://rb4bh2nttyqo" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_E01.png" id="3_an6ii"]
+[ext_resource type="Texture2D" uid="uid://c4q0e3pphnis1" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_S01.png" id="3_vg4pi"]
+[ext_resource type="Texture2D" uid="uid://duaiasb5kvcfg" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_E02.png" id="4_f13ar"]
+[ext_resource type="Texture2D" uid="uid://c4hkv7vuev43n" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_S02.png" id="4_pijgn"]
+[ext_resource type="Texture2D" uid="uid://bapk2y83mcs7p" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_N01.png" id="5_3prkw"]
+[ext_resource type="Texture2D" uid="uid://bx0rlrytxbmud" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_S03.png" id="5_dgcd4"]
+[ext_resource type="Script" path="res://scripts/flashlight.gd" id="5_ebimr"]
+[ext_resource type="Texture2D" uid="uid://c73jwrkuq6i8s" path="res://assets/light/cone_light.png" id="5_nwx15"]
+[ext_resource type="Texture2D" uid="uid://ccycoa4jsg8js" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_N02.png" id="6_oxjlq"]
+[ext_resource type="Texture2D" uid="uid://xoqncf4y1sws" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_S04.png" id="6_x10qq"]
+[ext_resource type="Texture2D" uid="uid://c7pc0i2f4bskl" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_S01.png" id="7_6awpk"]
+[ext_resource type="Texture2D" uid="uid://7f4e7c6oxixw" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_S05.png" id="7_7aey7"]
+[ext_resource type="Texture2D" uid="uid://bk8yawl1fc0vt" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_S02.png" id="8_4enwe"]
+[ext_resource type="Texture2D" uid="uid://8t0tnwvamx6v" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_S06.png" id="8_fp7v0"]
+[ext_resource type="Texture2D" uid="uid://chkpmcyj8110t" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_W01.png" id="9_8sphg"]
+[ext_resource type="Texture2D" uid="uid://4c3x8t3j8hhp" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_W01.png" id="9_vdjma"]
+[ext_resource type="Texture2D" uid="uid://bmwij6agry6wr" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Idle/space_reptile_idle_W02.png" id="10_rj8wt"]
+[ext_resource type="Texture2D" uid="uid://vuw5drbg0ihg" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_W02.png" id="10_yhejg"]
+[ext_resource type="Texture2D" uid="uid://1cwbfafgal4d" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_W03.png" id="11_hdxlc"]
+[ext_resource type="Texture2D" uid="uid://cn1inbax8rpmt" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_W04.png" id="12_t5gm7"]
+[ext_resource type="Texture2D" uid="uid://5jnjapv6sdsg" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_W05.png" id="13_nroaf"]
+[ext_resource type="Texture2D" uid="uid://0lm3cpcfjc7u" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_W06.png" id="14_dli3c"]
+[ext_resource type="Texture2D" uid="uid://bsggobo6ma2rq" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_E01.png" id="15_vom0l"]
+[ext_resource type="Texture2D" uid="uid://0nljbporuwyv" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_E02.png" id="16_8heq5"]
+[ext_resource type="Texture2D" uid="uid://csu5p87duhqh3" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_E03.png" id="17_7432j"]
+[ext_resource type="Texture2D" uid="uid://cx4c6vpod7p8b" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_E04.png" id="18_ur714"]
+[ext_resource type="Texture2D" uid="uid://cu2u3uyh31cju" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_E05.png" id="19_l2dae"]
+[ext_resource type="Texture2D" uid="uid://yqu7q4eftwjn" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_E06.png" id="20_jqb0k"]
+[ext_resource type="Texture2D" uid="uid://b1ujsys077auo" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_N01.png" id="21_ljjx2"]
+[ext_resource type="Texture2D" uid="uid://d0jgyu4dwbxpe" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_N02.png" id="22_yvm58"]
+[ext_resource type="Texture2D" uid="uid://bspuexri8v2xs" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_N03.png" id="23_o1hqr"]
+[ext_resource type="Texture2D" uid="uid://gheff1jf864p" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_N04.png" id="24_ewnuq"]
+[ext_resource type="Texture2D" uid="uid://de86g0mu6xxu2" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_N05.png" id="25_su4xu"]
+[ext_resource type="Texture2D" uid="uid://db1vuk3ohea7c" path="res://assets/Ditharts_SciFi_Character_Pack_v0.8/space reptile/Walk/space_reptile_walk_N06.png" id="26_dos1m"]
+[ext_resource type="Script" path="res://scenes/engineer_follow_camera.gd" id="37_s632w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3ijg"]
+size = Vector2(20, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbnnn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6awpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4enwe")
+}],
+"loop": true,
+"name": &"Idle Down",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_8sphg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rj8wt")
+}],
+"loop": true,
+"name": &"Idle Left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_an6ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f13ar")
+}],
+"loop": true,
+"name": &"Idle Right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_3prkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oxjlq")
+}],
+"loop": true,
+"name": &"Idle Up",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vg4pi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pijgn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dgcd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x10qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7aey7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fp7v0")
+}],
+"loop": true,
+"name": &"Walk Down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_vdjma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_yhejg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_hdxlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t5gm7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_nroaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dli3c")
+}],
+"loop": true,
+"name": &"Walk Left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_vom0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8heq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7432j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ur714")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_l2dae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_jqb0k")
+}],
+"loop": true,
+"name": &"Walk Right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_ljjx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_yvm58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_o1hqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ewnuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_su4xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dos1m")
+}],
+"loop": true,
+"name": &"Walk Up",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lykem"]
+radius = 18.0278
+
+[node name="Repair" type="Node2D" node_paths=PackedStringArray("engineer", "level")]
+visibility_layer = 2
+script = ExtResource("1_jpkfy")
+engineer = NodePath("Engineer")
+level = NodePath("Ship Indoors")
+
+[node name="TestShip" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.552941)
+scale = Vector2(25, 25)
+texture = ExtResource("1_5xdxt")
+
+[node name="Ship Indoors" parent="." instance=ExtResource("2_huixh")]
+unique_name_in_owner = true
+position = Vector2(0, -1)
+
+[node name="Engineer" type="CharacterBody2D" parent="." node_paths=PackedStringArray("sprite")]
+position = Vector2(167, 111)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_4tgig")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="Flashlight" type="Node2D" parent="Engineer"]
+position = Vector2(-10, 5)
+script = ExtResource("5_ebimr")
+
+[node name="CharacterLightShadowCasting" type="PointLight2D" parent="Engineer/Flashlight"]
+rotation = -1.5708
+energy = 0.5
+shadow_enabled = true
+texture = ExtResource("5_nwx15")
+
+[node name="CharacterLight" type="PointLight2D" parent="Engineer/Flashlight"]
+rotation = -1.5708
+blend_mode = 2
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_item_cull_mask = 2
+texture = ExtResource("5_nwx15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Engineer"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_k3ijg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Engineer"]
+sprite_frames = SubResource("SpriteFrames_xbnnn")
+animation = &"Idle Down"
+
+[node name="ComputerDetectionArea" type="Area2D" parent="Engineer"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Engineer/ComputerDetectionArea"]
+shape = SubResource("CircleShape2D_lykem")
+
+[node name="EngineerFollowCamera2D" type="Camera2D" parent="." node_paths=PackedStringArray("follow_character")]
+zoom = Vector2(2, 2)
+script = ExtResource("37_s632w")
+follow_character = NodePath("../Engineer")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[connection signal="area_entered" from="Engineer/ComputerDetectionArea" to="." method="_on_computer_detection_area_area_entered"]
+[connection signal="area_exited" from="Engineer/ComputerDetectionArea" to="." method="_on_computer_detection_area_area_exited"]
