@@ -230,8 +230,9 @@ position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_k3ijg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Engineer"]
+light_mask = 0
 sprite_frames = SubResource("SpriteFrames_xbnnn")
-animation = &"Idle Down"
+animation = &"Walk Up"
 
 [node name="ComputerDetectionArea" type="Area2D" parent="Engineer"]
 
@@ -246,5 +247,6 @@ follow_character = NodePath("../Engineer")
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.169245, 0.169245, 0.169245, 1)
 
+[connection signal="changed_direction_to" from="Engineer" to="Engineer/Flashlight" method="_on_engineer_changed_direction_to"]
 [connection signal="area_entered" from="Engineer/ComputerDetectionArea" to="." method="_on_computer_detection_area_area_entered"]
 [connection signal="area_exited" from="Engineer/ComputerDetectionArea" to="." method="_on_computer_detection_area_area_exited"]

@@ -132,7 +132,7 @@ unique_name_in_owner = true
 light_mask = 3
 sprite_frames = SubResource("SpriteFrames_eqdn6")
 animation = &"dark_side"
-frame_progress = 0.743703
+frame_progress = 0.484106
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 unique_name_in_owner = true
